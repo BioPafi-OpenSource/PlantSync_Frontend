@@ -1,0 +1,34 @@
+{
+  "plants": [
+    {
+      "id": "1",
+      "name": "Monstera Deliciosa",
+      "species": "Planta Trepadora",
+      "acquisitionDate": "2024-04-01",
+      "humidity": "Media",
+      "nextWateringDate": "2024-05-14",
+      "imageUrl": "https://static.wixstatic.com/media/b4df8d_29038c38771f4c67aa279995240d5717~mv2.jpg/v1/fill/w_520,h_693,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b4df8d_29038c38771f4c67aa279995240d5717~mv2.jpg",
+      "notificationsEnabled": true
+    },
+    {
+      "id": "2",
+      "name": "Aloe Vera",
+      "species": "Suculenta",
+      "acquisitionDate": "2024-03-15",
+      "humidity": "Alta",
+      "nextWateringDate": "2024-05-16",
+      "imageUrl": "https://m.media-amazon.com/images/I/71M0LvfvddL._AC_SL1500_.jpg",
+      "notificationsEnabled": false
+    },
+    {
+      "name": "Cactus",
+      "species": "Cactus",
+      "acquisitionDate": "2024-02-20",
+      "humidity": "Baja",
+      "nextWateringDate": "2024-05-18",
+      "imageUrl": "https://www.jacksonandperkins.com/images/xxl/29377.webp?v=0-1",
+      "notificationsEnabled": true,
+      "id": "3"
+    }
+  ]
+}

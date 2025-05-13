@@ -1,0 +1,40 @@
+<div class="detail-container" *ngIf="plant">
+    <div class="header">
+        <span class="back-arrow" routerLink="/plants">←</span>
+        <h2>{{ plant.name }}</h2>
+    </div>
+
+    <p class="date">Fecha de Adquisición: {{ plant.acquisitionDate }}</p>
+
+    <div class="main">
+        <img [src]="plant.imageUrl || 'https://via.placeholder.com/200x200'" alt="{{ plant.name }}" />
+
+        <div class="info">
+            <div class="actions">
+                <button class="edit" [routerLink]="['/plants', plant.id, 'edit']">Editar</button>
+                <button class="delete" (click)="onDelete()">Borrar</button>
+            </div>
+
+            <div class="section">
+                <h4>Descripción</h4>
+                <p>
+                    La {{ plant.name }} es una planta tropical de interior muy popular por su follaje espectacular. Tiene hojas grandes, verdes y brillantes, con cortes y perforaciones naturales que la hacen inconfundible.
+                </p>
+            </div>
+
+            <div class="section">
+                <h4>Recomendaciones del clima:</h4>
+                <p>Humedad: {{ plant.humidity }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tasks">
+        <h4>Tareas próximas:</h4>
+        <p>Riego: {{ plant.nextWateringDate }}</p>
+    </div>
+
+    <div class="footer">
+        <button class="history-btn">Ver historial</button>
+    </div>
+</div>

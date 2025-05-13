@@ -1,0 +1,29 @@
+<div class="form-container">
+    <div class="header">
+        <span class="back-arrow" routerLink="/plants">←</span>
+        <h2>{{ isEditMode ? 'Editar Planta' : 'Añadir Planta' }}</h2>
+    </div>
+
+    <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
+        <label for="name">Nombre de tu planta</label>
+        <input id="name" type="text" formControlName="name" />
+
+        <label for="species">Especie o tipo de planta</label>
+        <input id="species" type="text" formControlName="species" />
+
+        <label for="acquisitionDate">Fecha de Adquisición</label>
+        <input id="acquisitionDate" type="date" formControlName="acquisitionDate" />
+
+        <label>
+            <input type="checkbox" formControlName="notificationsEnabled" />
+            ¿Desea activar las notificaciones?
+        </label>
+
+        <label for="imageUrl">Foto de tu planta</label>
+        <input id="imageUrl" type="text" formControlName="imageUrl" />
+
+        <button type="submit" [disabled]="plantForm.invalid">
+            {{ isEditMode ? 'Guardar cambios' : 'Añadir' }}
+        </button>
+    </form>
+</div>

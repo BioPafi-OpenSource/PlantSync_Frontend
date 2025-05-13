@@ -1,0 +1,23 @@
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbACF_5_9ZIqxZTFLxTbYDll42F-h0keNMgr5vhWdU-kCDy1x5jaMjb-vOhAMZYkcMmgkOqefsGmeALW9qXiAdhyphenhyphenIPMT3z2JNypCS9ZEAC_O-j-W7gX7ysUMsPIQ1P9S9OFivpCeCqbY1vyv_479SoYYnbYI7gUfQSHW3IBpN6HTuO4dkrcH1KJ3HIBh0/s406/logo.jpg" alt="PlantSync" />
+        </div>
+
+        <nav>
+            <a routerLink="/plants" routerLinkActive="active">Mis Plantas</a>
+            <a routerLink="/guides" routerLinkActive="active">Guías</a>
+            <a routerLink="/tasks" routerLinkActive="active">Tareas</a>
+            <a routerLink="/chat" routerLinkActive="active">RootBot</a>
+            <a routerLink="/config" routerLinkActive="active">Configuración</a>
+        </nav>
+
+        <div class="logout">
+            <a href="#">Cerrar Sesión</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <router-outlet></router-outlet>
+    </main>
+</div>
