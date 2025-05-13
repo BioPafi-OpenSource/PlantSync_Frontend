@@ -1,10 +1,22 @@
-export interface Plant {
+export class Plant {
     id: number;
     name: string;
     species: string;
     acquisitionDate: string;
     humidity: string;
     nextWateringDate: string;
-    imageUrl?: string;
+    imageUrl: string;
     notificationsEnabled: boolean;
+
+
+    constructor() {
+        this.id = 0;
+        this.name = "";
+        this.species = "";
+        this.acquisitionDate = "";
+        this.humidity = "";
+        this.nextWateringDate = "";
+        this.imageUrl = "";
+        this.notificationsEnabled = false;
+    }
 }

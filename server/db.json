@@ -7,7 +7,7 @@
       "acquisitionDate": "2024-04-01",
       "humidity": "Media",
       "nextWateringDate": "2024-05-14",
-      "imageUrl": "https://via.placeholder.com/200x150?text=Monstera",
+      "imageUrl": "https://static.wixstatic.com/media/b4df8d_29038c38771f4c67aa279995240d5717~mv2.jpg/v1/fill/w_520,h_693,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b4df8d_29038c38771f4c67aa279995240d5717~mv2.jpg",
       "notificationsEnabled": true
     },
     {
@@ -17,7 +17,7 @@
       "acquisitionDate": "2024-03-15",
       "humidity": "Alta",
       "nextWateringDate": "2024-05-16",
-      "imageUrl": "assets/images/aloe.png",
+      "imageUrl": "https://m.media-amazon.com/images/I/71M0LvfvddL._AC_SL1500_.jpg",
       "notificationsEnabled": false
     },
     {
@@ -26,7 +26,7 @@
       "acquisitionDate": "2024-02-20",
       "humidity": "Baja",
       "nextWateringDate": "2024-05-18",
-      "imageUrl": "assets/images/cactus.png",
+      "imageUrl": "https://www.jacksonandperkins.com/images/xxl/29377.webp?v=0-1",
       "notificationsEnabled": true,
       "id": "3"
     }

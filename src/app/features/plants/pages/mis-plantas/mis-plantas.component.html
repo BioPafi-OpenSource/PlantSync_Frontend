@@ -4,7 +4,7 @@
 
     <div class="grid">
         <div class="plant-card" *ngFor="let plant of plants">
-            <img [src]="plant.imageUrl || 'https://via.placeholder.com/100x100'" alt="{{ plant.name }}" />
+            <img [src]="plant.imageUrl" alt="{{ plant.name }}" width="100px" height="100px" />
             <div class="plant-info">
                 <h3>{{ plant.name }}</h3>
                 <p>Humedad: {{ plant.humidity }}</p>

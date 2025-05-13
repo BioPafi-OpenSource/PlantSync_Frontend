@@ -1,34 +1,38 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Plant } from '../models/plant';
-import { Observable } from 'rxjs';
+import { BaseService} from "../../../shared/services/base.service";
+import { environment} from "../../../../environments/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
-export class PlantService {
-  private apiUrl = 'http://localhost:3000/plants';
+export class PlantService extends BaseService<Plant> {
 
-  constructor(private http: HttpClient) {}
+  override resourceEndpoint: string = environment.ENDPOINT_PATH_PLANTS;
 
-  getPlants(): Observable<Plant[]> {
-    return this.http.get<Plant[]>(this.apiUrl);
+  constructor() {
+    super();
   }
 
-  getPlantById(id: number): Observable<Plant> {
-    return this.http.get<Plant>(`${this.apiUrl}/${id}`);
+  // Funciones explícitas reutilizando la lógica base
+
+  getPlants() {
+    return this.getAll();
   }
 
-  addPlant(plant: Plant): Observable<Plant> {
-    return this.http.post<Plant>(this.apiUrl, plant);
+  getPlantById(id: number | string) {
+    return this.getById(id);
   }
 
-  updatePlant(id: number, plant: Plant): Observable<Plant> {
-    return this.http.put<Plant>(`${this.apiUrl}/${id}`, plant);
+  addPlant(plant: Omit<Plant, 'id'>) {
+    return this.create(plant as Plant);
   }
 
-  deletePlant(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  updatePlant(id: number | string, plant: Plant) {
+    return this.update(id, plant);
   }
 
+  deletePlant(id: number | string) {
+    return this.delete(id);
+  }
 }
