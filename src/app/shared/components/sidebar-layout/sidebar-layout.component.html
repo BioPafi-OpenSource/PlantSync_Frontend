@@ -1,0 +1,23 @@
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="PlantSync" />
+        </div>
+
+        <nav>
+            <a routerLink="/plants" routerLinkActive="active">Mis Plantas</a>
+            <a routerLink="/guides" routerLinkActive="active">Guías</a>
+            <a routerLink="/tasks" routerLinkActive="active">Tareas</a>
+            <a routerLink="/chat" routerLinkActive="active">RootBot</a>
+            <a routerLink="/config" routerLinkActive="active">Configuración</a>
+        </nav>
+
+        <div class="logout">
+            <a href="#">Cerrar Sesión</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <router-outlet></router-outlet>
+    </main>
+</div>
