@@ -1,0 +1,10 @@
+<mat-card class="task-card" (click)="onClick()">
+    <mat-card-title>{{ task.plantName }}</mat-card-title>
+    <img [ngSrc]="task.imageUrl" alt="Imagen de planta" width="200" height="300"  priority/>
+    <div class = "task-card-content">
+        <mat-card-content>{{ task.date }}</mat-card-content>
+        <mat-card-subtitle>{{ task.action }}</mat-card-subtitle>
+
+    </div>
+
+</mat-card>
