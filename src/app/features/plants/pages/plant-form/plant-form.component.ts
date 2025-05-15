@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
 import { Plant } from '../../models/plant';
+import {User} from "../../../../shared/models/user";
 
 @Component({
   selector: 'app-plant-form',
@@ -47,15 +48,25 @@ export class PlantFormComponent implements OnInit {
 
   onSubmit(): void {
     const formData = this.plantForm.value;
+
     if (this.isEditMode) {
       this.plantService.updatePlant(this.plantId, formData).subscribe(() => {
         this.router.navigate(['/plants']);
       });
     } else {
+      const currentUserJson = localStorage.getItem('currentUser');
+      if (!currentUserJson) return;
+
+      const currentUser: User = JSON.parse(currentUserJson);
+
       const newPlant: Plant = {
         ...formData,
+        userId: currentUser.id,
         nextWateringDate: this.generateNextWateringDate()
       };
+
+      delete (newPlant as any).id;
+
       this.plantService.addPlant(newPlant).subscribe(() => {
         this.router.navigate(['/plants']);
       });
