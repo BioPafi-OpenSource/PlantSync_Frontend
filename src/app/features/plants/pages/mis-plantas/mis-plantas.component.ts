@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { PlantService } from '../../services/plant.service';
 import { Plant } from '../../models/plant';
 import { PlantService } from '../../services/plant.service';
 import {User} from "../../../../shared/models/user";
@@ -7,10 +10,12 @@ import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-mis-plantas',
+  standalone: true,
   templateUrl: './mis-plantas.component.html',
   imports: [
     RouterLink,
-    NgForOf
+    NgForOf,
+    CommonModule, RouterModule
   ],
   styleUrls: ['./mis-plantas.component.css']
 })

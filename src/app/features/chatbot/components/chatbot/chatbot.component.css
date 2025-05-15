@@ -1,0 +1,94 @@
+.chatbot-card {
+    max-width: 500px;
+    margin: 16px;
+}
+
+.chat-content {
+    padding: 16px;
+}
+
+.bot-message {
+    text-align: left;
+    margin-bottom: 16px;
+    padding: 8px 12px;
+    background-color: #e8f5e9;
+    border-radius: 12px;
+    display: inline-block;
+    max-width: 80%;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.option-button {
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.chatbot-card {
+    max-width: 800px;
+    min-height: 800px;
+    margin: 16px;
+    border-radius: 12px;
+    border: 1px solid #1e3c2f;
+
+    .chat-content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.message-bubble {
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+
+
+    background-color: #e8f5e9;
+    align-self: flex-start;
+
+
+    &.user-bubble {
+        background-color: #bbdefb;
+        align-self: flex-end;
+    }
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+
+}
+.option-button {
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.reset-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.reset-button {
+    min-width: 100px;
+}
+
+.ok-button {
+    min-width: 100px;
+}
