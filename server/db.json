@@ -11,6 +11,13 @@
       "name": "Ana",
       "email": "ana@example.com",
       "password": "123456"
+    },
+    {
+      "id": 3,
+      "name": "Renzo",
+      "email": "renzo123@gmail.com",
+      "password": "renzo",
+      "plantIds": []
     }
   ],
   "plants": [

@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
 import { UserService } from '../../services/user.service';
-import { User} from "../../../../shared/models/user";
+
 import {FormsModule} from "@angular/forms";
-import {NgIf} from "@angular/common";
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   imports: [
     FormsModule,
-    RouterLink,
-    NgIf
+    RouterLink
+
   ],
   styleUrls: ['./login.component.css']
 })

@@ -10,7 +10,7 @@ import {NgIf} from "@angular/common";
   templateUrl: './register.component.html',
   imports: [
     FormsModule,
-    NgIf,
+
     RouterLink
   ],
   styleUrls: ['./register.component.css']

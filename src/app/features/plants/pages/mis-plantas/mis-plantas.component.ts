@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
 import { Plant } from '../../models/plant';
-import { PlantService } from '../../services/plant.service';
+
 import {User} from "../../../../shared/models/user";
 import {RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
