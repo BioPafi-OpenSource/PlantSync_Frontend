@@ -108,5 +108,35 @@
       "notificationsEnabled": true,
       "id": "3"
     }
+  ],
+  "guides": [
+    {
+      "id": 1,
+      "title": "Cómo cuidar un cactus",
+      "name": "Cactus",
+      "description": "Consejos para mantener tu cactus saludable.",
+      "topic": "Cuidado",
+      "type": "Cactus",
+      "imageUrl": "https://www.jacksonandperkins.com/images/xxl/29377.webp?v=0-1"
+    },
+    {
+      "id": 2,
+      "title": "Riego para orquídeas",
+      "name": "Orquideas",
+      "description": "Frecuencia y técnicas para regar orquídeas.",
+      "topic": "Riego",
+      "type": "Orquídea",
+      "imageUrl": "https://m.media-amazon.com/images/I/61bIKU1i-vS._AC_SX679_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Iluminación ideal para Aloe Vera",
+      "name": "Aloe Vera",
+      "description": "Dónde colocar tus Aloe Vera para que crezcan sanas.",
+      "topic": "Iluminación",
+      "type": "Aloe",
+      "imageUrl": "https://m.media-amazon.com/images/I/71M0LvfvddL._AC_SL1500_.jpg"
+    }
   ]
+
 }
