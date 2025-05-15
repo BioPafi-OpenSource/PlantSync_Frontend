@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {ChatbotComponent} from "../../components/chatbot/chatbot.component";
+
+
 
 @Component({
   selector: 'app-chatbot-view',
-  imports: [],
+  standalone: true,
+  imports: [
+    ChatbotComponent
+
+  ],
   templateUrl: './chatbot-view.component.html',
   styleUrl: './chatbot-view.component.css'
 })
-export class ChatbotViewComponent {
+export class ChatbotViewComponent  {
+
+
 
 }
