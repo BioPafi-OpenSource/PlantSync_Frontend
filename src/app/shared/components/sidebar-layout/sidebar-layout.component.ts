@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-layout',
@@ -9,4 +9,12 @@ import { RouterModule } from '@angular/router';
   templateUrl: './sidebar-layout.component.html',
   styleUrls: ['./sidebar-layout.component.css']
 })
-export class SidebarLayoutComponent {}
+export class SidebarLayoutComponent {
+
+  constructor(private router: Router) {}
+
+  logout(): void {
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['/login']);
+  }
+}

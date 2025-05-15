@@ -88,4 +88,9 @@ export abstract class BaseService<T> {
     return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
         .pipe(retry(2), catchError(this.handleError));
   }
+
+  getByQuery(param: string, value: string | number) {
+    return this.http.get<T[]>(`${environment.BASE_URL}${this.resourceEndpoint}?${param}=${value}`);
+  }
+
 }
