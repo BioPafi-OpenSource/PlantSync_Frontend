@@ -1,0 +1,29 @@
+<div class="history-container">
+    <div class="header">
+        <button class="back-button" [routerLink]="['/plants', plantId]">←</button>
+        <h2>Historial de Planta</h2>
+    </div>
+
+    <div class="chart-container">
+        <canvas baseChart
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                chartType="line"
+                [legend]="false">
+        </canvas>
+
+    </div>
+
+    <div class="cards-container">
+        <div class="history-card" *ngFor="let event of history">
+            <div class="card-header">
+                <span class="icon" [ngClass]="event.type.toLowerCase()"></span>
+                <strong>{{ event.date | date:'dd MMM yyyy' }}</strong>
+            </div>
+            <p><strong>{{ event.type }}</strong></p>
+            <p>Hora: {{ event.time }}</p>
+            <p>Humedad: {{ event.humidity }}%</p>
+        </div>
+    </div>
+
+</div>

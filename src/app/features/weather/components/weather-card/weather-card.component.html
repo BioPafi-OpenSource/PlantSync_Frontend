@@ -1,0 +1,12 @@
+<div class="weather-card">
+    <h3>Condiciones climáticas</h3>
+
+    <div class="weather-info">
+        <p><strong>Temperatura:</strong> {{ temperature }} °C</p>
+        <p><strong>Humedad:</strong> {{ humidity }} %</p>
+    </div>
+
+    <div class="weather-tip" *ngIf="tip">
+        <p>{{ tip }}</p>
+    </div>
+</div>

@@ -20,5 +20,10 @@ export const plantsRoutes: Routes = [
     path: ':id/edit',
     loadComponent: () =>
         import('./pages/plant-form/plant-form.component').then(m => m.PlantFormComponent)
+  },
+  {
+    path: ':id/history',
+    loadComponent: () =>
+        import('./pages/plant-history-view/plant-history-view.component').then(m => m.PlantHistoryViewComponent)
   }
 ];
