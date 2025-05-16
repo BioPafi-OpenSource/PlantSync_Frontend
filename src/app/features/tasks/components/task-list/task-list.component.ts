@@ -23,8 +23,8 @@ export class TaskListComponent implements OnInit {
 
   ngOnInit(): void {
     this.taskService.getAll().subscribe((tasksFromApi: any[]) => {
-      const today = new Date().toISOString().split('T')[0];
-
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
       const mappedTasks = tasksFromApi.map(taskFromApi => {
         let task = new Task();
         task.id = taskFromApi.id;
@@ -36,9 +36,19 @@ export class TaskListComponent implements OnInit {
         task.plantId = taskFromApi.plant.plantId;
         return task;
       });
+      this.todayTasks = mappedTasks.filter(t => {
+        const taskDate = new Date(t.date);
+        taskDate.setHours(0, 0, 0, 0);
+        return taskDate.getTime() === today.getTime();
+      });
 
-      this.todayTasks = mappedTasks.filter(t => t.date === today);
-      this.upcomingTasks = mappedTasks.filter(t => t.date !== today);
+      // Filtrar tareas futuras (mayores a hoy)
+      this.upcomingTasks = mappedTasks.filter(t => {
+        const taskDate = new Date(t.date);
+        taskDate.setHours(0, 0, 0, 0);
+        return taskDate.getTime() > today.getTime();
+      });
+
     });
   }
 
@@ -57,5 +67,6 @@ export class TaskListComponent implements OnInit {
 
   deleteTask(id: number): void {
     this.todayTasks = this.todayTasks.filter(task => task.id !== id);
+    this.upcomingTasks = this.upcomingTasks.filter(task => task.id !== id);
   }
 }

@@ -1,7 +1,7 @@
 {"tasks": [
   {
     "id": 3,
-    "date": "2025-05-14",
+    "date": "2025-05-17",
     "action": "Poner fertilizante",
     "completed": false,
     "plant": {
@@ -12,7 +12,7 @@
   },
   {
     "id": 4,
-    "date": "2025-05-14",
+    "date": "2025-05-18",
     "action": "Podar ramas",
     "completed": false,
     "plant": {
@@ -23,7 +23,7 @@
   },
   {
     "id": 5,
-    "date": "2025-05-14",
+    "date": "2025-05-19",
     "action": "Regar",
     "completed": false,
     "plant": {
@@ -67,7 +67,7 @@
   },
   {
     "id": 9,
-    "date": "2025-08-01",
+    "date": "2025-08-20",
     "action": "Regar pLanta",
     "completed": false,
     "plant": {
