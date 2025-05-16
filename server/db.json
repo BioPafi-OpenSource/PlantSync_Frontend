@@ -53,17 +53,6 @@
       "imageUrl": "https://www.jacksonandperkins.com/images/xxl/29377.webp?v=0-1",
       "notificationsEnabled": true,
       "userId": 2
-    },
-    {
-      "name": "Oreja de Conejo",
-      "species": "Suculenta",
-      "acquisitionDate": "2025-05-15",
-      "humidity": "Normal",
-      "nextWateringDate": "2025-05-20",
-      "imageUrl": "https://planterista.com/wp-content/uploads/2017/08/k-tomentosa.jpg",
-      "notificationsEnabled": true,
-      "userId": 1,
-      "id": 4
     }
   ],
   "tasks": [
@@ -172,6 +161,86 @@
       "topic": "Iluminación",
       "type": "Aloe",
       "imageUrl": "https://m.media-amazon.com/images/I/71M0LvfvddL._AC_SL1500_.jpg"
+    }
+  ],
+  "plantHistory": [
+    {
+      "id": 1,
+      "plantId": 1,
+      "type": "Riego",
+      "date": "2025-05-13",
+      "time": "08:10",
+      "humidity": 30
+    },
+    {
+      "id": 2,
+      "plantId": 1,
+      "type": "Fertilización",
+      "date": "2025-05-10",
+      "time": "09:30",
+      "humidity": 35
+    },
+    {
+      "id": 3,
+      "plantId": 1,
+      "type": "Riego",
+      "date": "2025-05-08",
+      "time": "07:55",
+      "humidity": 28
+    },
+    {
+      "id": 4,
+      "plantId": 2,
+      "type": "Riego",
+      "date": "2025-05-12",
+      "time": "06:40",
+      "humidity": 45
+    },
+    {
+      "id": 5,
+      "plantId": 2,
+      "type": "Poda",
+      "date": "2025-05-09",
+      "time": "11:00",
+      "humidity": 50
+    },
+    {
+      "id": 6,
+      "plantId": 3,
+      "type": "Fertilización",
+      "date": "2025-05-14",
+      "time": "10:45",
+      "humidity": 38
+    },
+    {
+      "id": 7,
+      "plantId": 3,
+      "type": "Riego",
+      "date": "2025-05-11",
+      "time": "09:15",
+      "humidity": 33
+    }
+  ],
+  "weatherStatus": [
+    {
+      "id": 1,
+      "location": "Lima",
+      "temperature": 22,
+      "humidity": 55
+    }
+  ],
+  "weatherTips": [
+    {
+      "humidityRange": [0, 30],
+      "tip": "Humedad baja: se recomienda regar más seguido y evitar exposición prolongada al sol."
+    },
+    {
+      "humidityRange": [31, 60],
+      "tip": "Humedad normal: la planta se encuentra en buen estado respecto al clima."
+    },
+    {
+      "humidityRange": [61, 100],
+      "tip": "Humedad alta: asegúrate de que la maceta tenga buen drenaje para evitar exceso de agua."
     }
   ]
 }
