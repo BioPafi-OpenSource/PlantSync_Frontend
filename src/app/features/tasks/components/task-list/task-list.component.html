@@ -1,0 +1,27 @@
+<div class="task-list-container">
+
+
+    <section class="task-section">
+        <h2 class="section-title">Hoy</h2>
+        <div class="task-row">
+            <app-task-item
+                    *ngFor="let task of todayTasks"
+                    [task]="task"
+                    [canConfirm]="true"
+                    (taskDeleted)="deleteTask($event)">
+            </app-task-item>
+        </div>
+    </section>
+<hr class ="task-divider">
+    <section class="task-section">
+        <h2 class="section-title">Próximas</h2>
+        <div class="task-row">
+            <app-task-item
+                    *ngFor="let task of upcomingTasks"
+                    [task]="task"
+                    [canConfirm]="false"
+            >
+            </app-task-item>
+        </div>
+    </section>
+</div>

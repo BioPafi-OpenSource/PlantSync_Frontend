@@ -1,0 +1,30 @@
+mat-dialog-content {
+
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+mat-dialog-actions {
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+h1 {
+    font-size: 20px;
+    font-family: Poppins, serif;
+    font-weight: bold;
+
+}
+
+
+.dialog-container{
+    font-family: Nunito;
+    font-size: 16px;
+}
+
+.dialog-header{
+    font-family: Poppins;
+
+}

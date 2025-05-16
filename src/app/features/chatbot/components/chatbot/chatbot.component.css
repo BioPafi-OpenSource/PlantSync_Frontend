@@ -1,0 +1,107 @@
+.chatbot-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 16px;
+    border: 1px solid #1e3c2f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Mensajes */
+
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.message-bubble {
+    padding: 0.75rem 1rem;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 75%;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+.message-bubble.bot {
+    background-color: #e8f5e9;
+    align-self: flex-start;
+}
+
+.message-bubble.user {
+    background-color: #d1eaff;
+    align-self: flex-end;
+}
+
+/* Opciones */
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.option-button {
+    background-color: #f0f4c3;
+    color: #1b5e20;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.option-button:hover {
+    background-color: #e6ee9c;
+}
+
+/* Selector de plantas */
+
+.plant-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    background-color: #FFFFFF;
+}
+
+
+
+.send-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+}
+
+/* Botón OK */
+
+.reset-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.ok-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    border: none;
+}

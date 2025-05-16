@@ -1,0 +1,28 @@
+.message-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.message-container.user-message {
+    justify-content: flex-end;
+}
+
+.message-bubble {
+    max-width: 75%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    border-radius: 16px;
+    background-color: #e8f5e9; /* bot por defecto */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    word-wrap: break-word;
+}
+
+.message-bubble.user-bubble {
+    background-color: #d1eaff;
+}
+
+.message-content {
+    white-space: pre-line;
+}
+

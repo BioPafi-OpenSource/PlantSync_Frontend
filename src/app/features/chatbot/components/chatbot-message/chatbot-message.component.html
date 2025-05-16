@@ -1,0 +1,7 @@
+<div class="message-container" [class.user-message]="sender === 'user'">
+    <mat-card class="message-bubble" [class.user-bubble]="sender === 'user'">
+        <div class="message-content">
+            {{ text }}
+        </div>
+    </mat-card>
+</div>

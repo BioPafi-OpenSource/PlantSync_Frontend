@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Mis Guias</h2>
+
+    <div class="grid">
+        <div class="guide-card" *ngFor="let guide of guides">
+            <img [src]="guide.imageUrl" alt="{{ guide.title }}" width="100px" height="100px" />
+            <div class="guides-info">
+                <h3>{{ guide.title }}</h3>
+                <p>Descripción: {{ guide.description }}</p>
+                <p>Topic: {{ guide.topic }}</p>
+                <p>Type: {{ guide.type }}</p>
+                <button [routerLink]="['/guides', guide.id]" class="details-btn">Ver Detalles</button>
+            </div>
+        </div>
+    </div>
+</div>
