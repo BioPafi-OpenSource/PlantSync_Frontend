@@ -1,0 +1,36 @@
+<div class="detail-container" *ngIf="guide">
+    <div class="header">
+        <span class="back-arrow" routerLink="/guides">←</span>
+            <h2>{{ guide.title }}</h2>
+    </div>
+
+    <p class="date">Tipo: {{ guide.type }}</p>
+
+    <div class="main">
+        <img [src]="guide.imageUrl || 'https://via.placeholder.com/200x200'" alt="{{ guide.title }}" />
+
+        <div class="info">
+
+            <div class="section">
+                <h4>Cuidado de la Planta</h4>
+                <p>
+                    La {{ guide.name }} es una planta tropical de interior muy popular por su follaje espectacular. Tiene hojas grandes, verdes y brillantes, con cortes y perforaciones naturales que la hacen inconfundible.
+                </p>
+                <br>
+                <br>
+                <h4>Luz </h4>
+                <p>
+                    La {{ guide.name }} es una planta tropical de interior muy popular por su follaje espectacular. Tiene hojas grandes, verdes y brillantes, con cortes y perforaciones naturales que la hacen inconfundible.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tasks">
+        <h4>Agua</h4>
+        <p>
+            La {{ guide.name }} es una planta tropical de interior muy popular por su follaje espectacular. Tiene hojas grandes, verdes y brillantes, con cortes y perforaciones naturales que la hacen inconfundible.
+        </p>
+    </div>
+
+</div>

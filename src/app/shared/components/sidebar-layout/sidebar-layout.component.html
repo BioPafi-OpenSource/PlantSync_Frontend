@@ -8,12 +8,12 @@
             <a routerLink="/plants" routerLinkActive="active">Mis Plantas</a>
             <a routerLink="/guides" routerLinkActive="active">Guías</a>
             <a routerLink="/tasks" routerLinkActive="active">Tareas</a>
-            <a routerLink="/chat" routerLinkActive="active">RootBot</a>
+            <a routerLink="/chatbot" routerLinkActive="active">RootBot</a>
             <a routerLink="/config" routerLinkActive="active">Configuración</a>
         </nav>
 
         <div class="logout">
-            <a href="#">Cerrar Sesión</a>
+            <a (click)="logout()" style="cursor: pointer;">Cerrar Sesión</a>
         </div>
     </aside>
 

@@ -35,4 +35,9 @@ export class PlantService extends BaseService<Plant> {
   deletePlant(id: number | string) {
     return this.delete(id);
   }
+
+  getPlantsByUserId(userId: number | string) {
+    return this.getByQuery('userId', userId);
+  }
+
 }

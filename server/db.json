@@ -1,4 +1,73 @@
-{"tasks": [
+
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Javier",
+      "email": "javier@example.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Ana",
+      "email": "ana@example.com",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "name": "Renzo",
+      "email": "renzo123@gmail.com",
+      "password": "renzo",
+      "plantIds": []
+    }
+  ],
+  "plants": [
+    {
+      "id": 1,
+      "name": "Monstera Deliciosa",
+      "species": "Planta Trepadora",
+      "acquisitionDate": "2024-04-01",
+      "humidity": "Media",
+      "nextWateringDate": "2024-05-14",
+      "imageUrl": "https://static.wixstatic.com/media/b4df8d_29038c38771f4c67aa279995240d5717~mv2.jpg",
+      "notificationsEnabled": true,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Aloe Vera",
+      "species": "Suculenta",
+      "acquisitionDate": "2024-03-15",
+      "humidity": "Alta",
+      "nextWateringDate": "2024-05-16",
+      "imageUrl": "https://m.media-amazon.com/images/I/71M0LvfvddL._AC_SL1500_.jpg",
+      "notificationsEnabled": false,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "name": "Cactus",
+      "species": "Cactus",
+      "acquisitionDate": "2024-02-20",
+      "humidity": "Baja",
+      "nextWateringDate": "2024-05-18",
+      "imageUrl": "https://www.jacksonandperkins.com/images/xxl/29377.webp?v=0-1",
+      "notificationsEnabled": true,
+      "userId": 2
+    },
+    {
+      "name": "Oreja de Conejo",
+      "species": "Suculenta",
+      "acquisitionDate": "2025-05-15",
+      "humidity": "Normal",
+      "nextWateringDate": "2025-05-20",
+      "imageUrl": "https://planterista.com/wp-content/uploads/2017/08/k-tomentosa.jpg",
+      "notificationsEnabled": true,
+      "userId": 1,
+      "id": 4
+    }
+  ],
+  "tasks": [
   {
     "id": 3,
     "date": "2025-05-17",
@@ -77,36 +146,33 @@
     }
   }
 ],
-  "plants": [
+  "guides": [
     {
-      "id": "1",
-      "name": "Monstera Deliciosa",
-      "species": "Planta Trepadora",
-      "acquisitionDate": "2024-04-01",
-      "humidity": "Media",
-      "nextWateringDate": "2024-05-14",
-      "imageUrl": "https://static.wixstatic.com/media/b4df8d_29038c38771f4c67aa279995240d5717~mv2.jpg/v1/fill/w_520,h_693,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b4df8d_29038c38771f4c67aa279995240d5717~mv2.jpg",
-      "notificationsEnabled": true
-    },
-    {
-      "id": "2",
-      "name": "Aloe Vera",
-      "species": "Suculenta",
-      "acquisitionDate": "2024-03-15",
-      "humidity": "Alta",
-      "nextWateringDate": "2024-05-16",
-      "imageUrl": "https://m.media-amazon.com/images/I/71M0LvfvddL._AC_SL1500_.jpg",
-      "notificationsEnabled": false
-    },
-    {
+      "id": 1,
+      "title": "Cómo cuidar un cactus",
       "name": "Cactus",
-      "species": "Cactus",
-      "acquisitionDate": "2024-02-20",
-      "humidity": "Baja",
-      "nextWateringDate": "2024-05-18",
-      "imageUrl": "https://www.jacksonandperkins.com/images/xxl/29377.webp?v=0-1",
-      "notificationsEnabled": true,
-      "id": "3"
+      "description": "Consejos para mantener tu cactus saludable.",
+      "topic": "Cuidado",
+      "type": "Cactus",
+      "imageUrl": "https://www.jacksonandperkins.com/images/xxl/29377.webp?v=0-1"
+    },
+    {
+      "id": 2,
+      "title": "Riego para orquídeas",
+      "name": "Orquideas",
+      "description": "Frecuencia y técnicas para regar orquídeas.",
+      "topic": "Riego",
+      "type": "Orquídea",
+      "imageUrl": "https://m.media-amazon.com/images/I/61bIKU1i-vS._AC_SX679_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Iluminación ideal para Aloe Vera",
+      "name": "Aloe Vera",
+      "description": "Dónde colocar tus Aloe Vera para que crezcan sanas.",
+      "topic": "Iluminación",
+      "type": "Aloe",
+      "imageUrl": "https://m.media-amazon.com/images/I/71M0LvfvddL._AC_SL1500_.jpg"
     }
   ]
 }

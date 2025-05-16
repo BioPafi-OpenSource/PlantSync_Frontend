@@ -1,0 +1,17 @@
+<div class="login-container">
+    <div class="login-form">
+        <h2>Iniciar Sesión</h2>
+        <form (ngSubmit)="login()">
+            <input type="email" [(ngModel)]="email" name="email" placeholder="Correo" required>
+            <input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar</button>
+        </form>
+        <p>¿No tienes una cuenta? <a routerLink="/register">Register</a></p>
+    </div>
+
+    <div class="login-info">
+        <h2>Tu Planta Siempre <br> Bien Cuidada, <br> Sin Complicaciones</h2>
+        <p>Monitorea su estado, recibe notificaciones y accede a guías sin ser un experto</p>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbACF_5_9ZIqxZTFLxTbYDll42F-h0keNMgr5vhWdU-kCDy1x5jaMjb-vOhAMZYkcMmgkOqefsGmeALW9qXiAdhyphenhyphenIPMT3z2JNypCS9ZEAC_O-j-W7gX7ysUMsPIQ1P9S9OFivpCeCqbY1vyv_479SoYYnbYI7gUfQSHW3IBpN6HTuO4dkrcH1KJ3HIBh0/s320/logo.jpg" alt="planta">
+    </div>
+</div>
