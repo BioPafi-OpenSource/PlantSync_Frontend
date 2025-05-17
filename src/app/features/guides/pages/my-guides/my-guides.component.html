@@ -1,15 +1,30 @@
 <div class="container">
-    <h2>Mis Guias</h2>
+    <!-- Title of the section -->
+    <h2>My Guides</h2>
 
+    <!-- Grid container to display multiple guide cards -->
     <div class="grid">
+        <!-- Loop through the guides array to display each guide -->
         <div class="guide-card" *ngFor="let guide of guides">
+            <!-- Guide image with dynamic source and alt text -->
             <img [src]="guide.imageUrl" alt="{{ guide.title }}" width="100px" height="100px" />
+
+            <!-- Container for guide information -->
             <div class="guides-info">
+                <!-- Guide title -->
                 <h3>{{ guide.title }}</h3>
-                <p>Descripción: {{ guide.description }}</p>
+
+                <!-- Guide description -->
+                <p>Description: {{ guide.description }}</p>
+
+                <!-- Guide topic -->
                 <p>Topic: {{ guide.topic }}</p>
+
+                <!-- Guide type -->
                 <p>Type: {{ guide.type }}</p>
-                <button [routerLink]="['/guides', guide.id]" class="details-btn">Ver Detalles</button>
+
+                <!-- Button to navigate to the guide's detailed page using routerLink -->
+                <button [routerLink]="['/guides', guide.id]" class="details-btn">View Details</button>
             </div>
         </div>
     </div>

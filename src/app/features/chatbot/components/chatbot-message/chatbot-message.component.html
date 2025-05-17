@@ -1,7 +1,10 @@
 <div class="message-container" [class.user-message]="sender === 'user'">
+    <!-- Container for each message; adds 'user-message' class if sender is 'user' -->
     <mat-card class="message-bubble" [class.user-bubble]="sender === 'user'">
+        <!-- Message bubble styled differently for user messages by adding 'user-bubble' class -->
         <div class="message-content">
-            {{ text }}
+            {{ text }}  <!-- Displays the message text -->
         </div>
     </mat-card>
 </div>
+

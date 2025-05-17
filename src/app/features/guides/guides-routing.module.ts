@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
 
-//CONFIGURACION DE RUTAS DE LAS GUIAS
+// ROUTE CONFIGURATION FOR THE GUIDES SECTION
 export const guidesRoutes: Routes = [
     {
-        path: '',
+        path: '',  // Default route loads the component that shows the list of guides
         loadComponent: () =>
             import('./pages/my-guides/my-guides.component').then(m => m.MyGuidesComponent)
     },
     {
-        path: ':id',
+        path: ':id',  // Dynamic route for showing the details of a specific guide by its ID
         loadComponent: () =>
             import('./pages/guides-detail/guide-detail.component').then(m => m.GuideDetailComponent)
     },
-
 ];
+
