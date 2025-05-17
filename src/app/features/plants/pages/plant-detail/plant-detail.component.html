@@ -1,39 +1,56 @@
 <div class="detail-container" *ngIf="plant">
+    <!-- Container only displays if the plant object exists -->
+
     <div class="header">
+        <!-- Header section with a back navigation arrow -->
         <span class="back-arrow" routerLink="/plants">←</span>
+        <!-- Displays the plant's name as the main title -->
         <h2>{{ plant.name }}</h2>
-        <p class="date">Fecha de Adquisición: {{ plant.acquisitionDate }}</p>
+        <!-- Shows the acquisition date of the plant -->
+        <p class="date">Acquisition Date: {{ plant.acquisitionDate }}</p>
     </div>
 
     <div class="main-layout">
+        <!-- Main layout divided into image and info sections -->
+
         <div class="image-section">
+            <!-- Displays the plant image or a placeholder if no image is provided -->
             <img [src]="plant.imageUrl || 'https://via.placeholder.com/200x200'" alt="{{ plant.name }}" />
         </div>
 
         <div class="info-section">
+            <!-- Section containing action buttons and plant description -->
+
             <div class="actions">
-                <button class="edit" [routerLink]="['/plants', plant.id, 'edit']">Editar</button>
-                <button class="delete" (click)="onDelete()">Borrar</button>
+                <!-- Button to navigate to the plant edit page -->
+                <button class="edit" [routerLink]="['/plants', plant.id, 'edit']">Edit</button>
+                <!-- Button to trigger the delete function -->
+                <button class="delete" (click)="onDelete()">Delete</button>
             </div>
 
             <div class="description">
-                <h4>Descripción</h4>
+                <!-- Plant description section -->
+                <h4>Description</h4>
                 <p>
-                    La {{ plant.name }} es una planta tropical de interior muy popular por su follaje espectacular.
-                    Tiene hojas grandes, verdes y brillantes, con cortes y perforaciones naturales que la hacen inconfundible.
+                    The {{ plant.name }} is a popular tropical indoor plant known for its spectacular foliage.
+                    It has large, glossy green leaves with natural cuts and holes that make it unmistakable.
                 </p>
             </div>
 
+            <!-- Weather card component (likely shows relevant weather info for the plant) -->
             <app-weather-card></app-weather-card>
         </div>
     </div>
 
     <div class="tasks">
-        <h4>Tareas próximas:</h4>
-        <p>Riego: {{ plant.nextWateringDate }}</p>
+        <!-- Upcoming tasks related to the plant -->
+        <h4>Upcoming Tasks:</h4>
+        <p>Watering: {{ plant.nextWateringDate }}</p>
     </div>
 
     <div class="footer">
+        <!-- Link to view the plant's history -->
         <a [routerLink]="['/plants', plant.id, 'history']">View History</a>
     </div>
 </div>
+

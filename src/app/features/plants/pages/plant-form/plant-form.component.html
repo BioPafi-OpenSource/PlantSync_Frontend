@@ -1,29 +1,38 @@
 <div class="form-container">
+    <!-- Header section with a back arrow link and dynamic title based on edit mode -->
     <div class="header">
         <span class="back-arrow" routerLink="/plants">←</span>
-        <h2>{{ isEditMode ? 'Editar Planta' : 'Añadir Planta' }}</h2>
+        <h2>{{ isEditMode ? 'Edit Plant' : 'Add Plant' }}</h2>
     </div>
 
+    <!-- Plant form using Angular reactive forms -->
     <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
-        <label for="name">Nombre de tu planta</label>
+        <!-- Input field for the plant's name -->
+        <label for="name">Name of your plant</label>
         <input id="name" type="text" formControlName="name" />
 
-        <label for="species">Especie o tipo de planta</label>
+        <!-- Input field for the species or type of plant -->
+        <label for="species">Species or type of plant</label>
         <input id="species" type="text" formControlName="species" />
 
-        <label for="acquisitionDate">Fecha de Adquisición</label>
+        <!-- Input field for the acquisition date -->
+        <label for="acquisitionDate">Acquisition Date</label>
         <input id="acquisitionDate" type="date" formControlName="acquisitionDate" />
 
+        <!-- Checkbox to enable or disable notifications -->
         <label>
             <input type="checkbox" formControlName="notificationsEnabled" />
-            ¿Desea activar las notificaciones?
+            Would you like to enable notifications?
         </label>
 
-        <label for="imageUrl">Foto de tu planta</label>
+        <!-- Input field for the plant photo URL -->
+        <label for="imageUrl">Photo of your plant</label>
         <input id="imageUrl" type="text" formControlName="imageUrl" />
 
+        <!-- Submit button that is disabled if the form is invalid, with dynamic text based on edit mode -->
         <button type="submit" [disabled]="plantForm.invalid">
-            {{ isEditMode ? 'Guardar cambios' : 'Añadir' }}
+            {{ isEditMode ? 'Save changes' : 'Add' }}
         </button>
     </form>
 </div>
+

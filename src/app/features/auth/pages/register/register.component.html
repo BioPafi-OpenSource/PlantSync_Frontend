@@ -1,18 +1,42 @@
+<!-- Container for the entire registration page layout -->
 <div class="register-container">
+
+    <!-- Left side: Registration form section -->
     <div class="register-form">
+        <!-- Heading for the registration form -->
         <h2>Registrarse</h2>
+
+        <!-- Registration form that triggers the register() method on submit -->
         <form (ngSubmit)="register()">
+            <!-- Text input for the user's full name, bound to 'name' variable -->
             <input type="text" [(ngModel)]="name" name="name" placeholder="Nombres" required>
+
+            <!-- Email input field, bound to 'email' variable -->
             <input type="email" [(ngModel)]="email" name="email" placeholder="Correo" required>
+
+            <!-- Password input field, bound to 'password' variable -->
             <input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
+
+            <!-- Submit button to trigger the registration process -->
             <button type="submit">Registrarse</button>
         </form>
+
+        <!-- Link to the login page for users who already have an account -->
         <p>¿Tienes una cuenta? <a routerLink="/login">Login</a></p>
     </div>
 
+    <!-- Right side: Informational section about the application's benefits -->
     <div class="register-info">
+        <!-- Promotional heading emphasizing ease of plant care -->
         <h2>Tu Planta Siempre <br> Bien Cuidada, <br> Sin Complicaciones</h2>
+
+        <!-- Short description of the app's main features -->
         <p>Monitorea su estado, recibe notificaciones y accede a guías sin ser un experto</p>
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbACF_5_9ZIqxZTFLxTbYDll42F-h0keNMgr5vhWdU-kCDy1x5jaMjb-vOhAMZYkcMmgkOqefsGmeALW9qXiAdhyphenhyphenIPMT3z2JNypCS9ZEAC_O-j-W7gX7ysUMsPIQ1P9S9OFivpCeCqbY1vyv_479SoYYnbYI7gUfQSHW3IBpN6HTuO4dkrcH1KJ3HIBh0/s320/logo.jpg" alt="planta">
+
+        <!-- Image representing the application's purpose (plant care) -->
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbACF_5_9ZIqxZTFLxTbYDll42F-h0keNMgr5vhWdU-kCDy1x5jaMjb-vOhAMZYkcMmgkOqefsGmeALW9qXiAd--IPMT3z2JNypCS9ZEAC_O-j-W7gX7ysUMsPIQ1P9S9OFivpCeCqbY1vyv_479SoYYnbYI7gUfQSHW3IBpN6HTuO4dkrcH1KJ3HIBh0/s320/logo.jpg"
+             alt="planta">
     </div>
+
 </div>
+

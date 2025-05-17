@@ -1,22 +1,27 @@
 <div class="layout">
+    <!-- Sidebar section containing the app logo and navigation links -->
     <aside class="sidebar">
         <div class="logo">
+            <!-- Logo image of the application -->
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbACF_5_9ZIqxZTFLxTbYDll42F-h0keNMgr5vhWdU-kCDy1x5jaMjb-vOhAMZYkcMmgkOqefsGmeALW9qXiAdhyphenhyphenIPMT3z2JNypCS9ZEAC_O-j-W7gX7ysUMsPIQ1P9S9OFivpCeCqbY1vyv_479SoYYnbYI7gUfQSHW3IBpN6HTuO4dkrcH1KJ3HIBh0/s406/logo.jpg" alt="PlantSync" />
         </div>
 
+        <!-- Navigation menu with router links to different sections of the app -->
         <nav>
-            <a routerLink="/plants" routerLinkActive="active">Mis Plantas</a>
-            <a routerLink="/guides" routerLinkActive="active">Guías</a>
-            <a routerLink="/tasks" routerLinkActive="active">Tareas</a>
+            <a routerLink="/plants" routerLinkActive="active">My Plants</a>
+            <a routerLink="/guides" routerLinkActive="active">Guides</a>
+            <a routerLink="/tasks" routerLinkActive="active">Tasks</a>
             <a routerLink="/chatbot" routerLinkActive="active">RootBot</a>
-            <a routerLink="/config" routerLinkActive="active">Configuración</a>
+            <a routerLink="/config" routerLinkActive="active">Settings</a>
         </nav>
 
+        <!-- Logout button with click handler -->
         <div class="logout">
-            <a (click)="logout()" style="cursor: pointer;">Cerrar Sesión</a>
+            <a (click)="logout()" style="cursor: pointer;">Log Out</a>
         </div>
     </aside>
 
+    <!-- Main content area where routed views will be displayed -->
     <main class="main-content">
         <router-outlet></router-outlet>
     </main>

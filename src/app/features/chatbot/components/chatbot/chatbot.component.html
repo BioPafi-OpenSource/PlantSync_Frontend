@@ -1,50 +1,50 @@
 <mat-card class="chatbot-card">
     <div class="chat-content">
-        <!-- Área de mensajes -->
+        <!-- Messages area: displays all chat messages -->
         <div class="messages-container">
             <app-chatbot-message
                     *ngFor="let message of messages"
-                    [text]="message.text"
-                    [sender]="message.sender">
+            [text]="message.text"
+            [sender]="message.sender">
             </app-chatbot-message>
         </div>
 
-        <!-- Opciones del bot (solo si no hay selector visible y no estamos al final) -->
+        <!-- Bot options: show only if plant selector and reset button are hidden -->
         <div class="options-container" *ngIf="!showPlantSelector && !showResetButton">
             <button mat-raised-button
                     *ngFor="let option of botOptions"
-                    (click)="selectOption(option)"
-                    class="option-button">
-                {{option}}
+            (click)="selectOption(option)"
+            class="option-button">
+            {{option}}                           <!-- Display option text -->
             </button>
         </div>
 
-        <!-- Selector de plantas -->
+        <!-- Plant selector dropdown: visible when user must pick a plant -->
         <div class="plant-selector" *ngIf="showPlantSelector">
             <mat-form-field appearance="outline">
-                <mat-label>Selecciona una planta</mat-label>
-                <mat-select [(ngModel)]="selectedPlantId">
+                <mat-label>Select a plant</mat-label>  <!-- Label for the dropdown -->
+                <mat-select [(ngModel)]="selectedPlantId">  <!-- Two-way binding for selected plant ID -->
                     <mat-option *ngFor="let plant of plants" [value]="plant.id">
-                        {{plant.name}}
+                        {{plant.name}}                   <!-- Display plant name as option -->
                     </mat-option>
                 </mat-select>
             </mat-form-field>
             <button mat-raised-button
                     color="primary"
                     (click)="onPlantSelected()"
-                    [disabled]="!selectedPlantId"
-                    class="send-button">
-                Enviar
+            [disabled]="!selectedPlantId"
+            class="send-button">
+            Send
             </button>
         </div>
 
-        <!-- Botón OK (solo al final) -->
+        <!-- OK button: shown at the end of conversation to reset -->
         <div class="reset-container" *ngIf="showResetButton">
             <button mat-raised-button
                     color="primary"
                     (click)="resetConversation()"
-                    class="ok-button">
-                OK
+            class="ok-button">
+            OK
             </button>
         </div>
     </div>

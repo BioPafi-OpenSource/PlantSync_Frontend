@@ -1,14 +1,19 @@
-<div class = "dialog-header">
-    <h1 mat-dialog-title>¿Completaste esta tarea?</h1>
+<!-- Dialog header section with a title asking if the user has completed the task -->
+<div class="dialog-header">
+    <h1 mat-dialog-title>Did you complete this task?</h1>
 </div>
 
-<div class = "dialog-container">
+<!-- Dialog content section with a warning message -->
+<div class="dialog-container">
     <div mat-dialog-content>
-        <p>Esta acción eliminará la tarea de la lista.</p>
+        <p>This action will remove the task from the list.</p>
     </div>
 
+    <!-- Dialog action buttons aligned to the end (right) -->
     <div mat-dialog-actions align="end">
-        <button mat-button (click)="onCancel()">Cancelar</button>
-        <button mat-button color="warn" (click)="onConfirm()">Sí, eliminar</button>
+        <!-- Cancel button triggers the onCancel() method -->
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <!-- Confirm button (styled as warning) triggers the onConfirm() method -->
+        <button mat-button color="warn" (click)="onConfirm()">Yes, delete</button>
     </div>
 </div>

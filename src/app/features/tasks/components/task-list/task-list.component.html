@@ -1,27 +1,34 @@
+<!-- Container for the full task list view -->
 <div class="task-list-container">
 
-
+    <!-- Section displaying today's tasks -->
     <section class="task-section">
-        <h2 class="section-title">Hoy</h2>
+        <h2 class="section-title">Today</h2>
         <div class="task-row">
+            <!-- Iterates over today's tasks and renders each using the task item component -->
             <app-task-item
                     *ngFor="let task of todayTasks"
                     [task]="task"
                     [canConfirm]="true"
-                    (taskDeleted)="deleteTask($event)">
+            (taskDeleted)="deleteTask($event)"> <!-- Emits an event when a task is deleted -->
             </app-task-item>
         </div>
     </section>
-<hr class ="task-divider">
+
+    <!-- Divider between today and upcoming tasks -->
+    <hr class="task-divider">
+
+    <!-- Section displaying upcoming (future) tasks -->
     <section class="task-section">
-        <h2 class="section-title">Próximas</h2>
+        <h2 class="section-title">Upcoming</h2>
         <div class="task-row">
+            <!-- Iterates over upcoming tasks and renders each using the task item component -->
             <app-task-item
                     *ngFor="let task of upcomingTasks"
                     [task]="task"
-                    [canConfirm]="false"
-            >
+                    [canConfirm]="false"> <!-- Disables confirmation (not clickable) -->
             </app-task-item>
         </div>
     </section>
 </div>
+

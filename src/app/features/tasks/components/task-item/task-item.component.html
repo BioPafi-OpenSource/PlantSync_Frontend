@@ -1,8 +1,19 @@
+<!-- A Material Design card representing a plant-related task -->
 <mat-card class="task-card" (click)="onClick()">
+
+    <!-- The card title displays the name of the plant -->
     <mat-card-title>{{ task.plantName }}</mat-card-title>
-    <img [ngSrc]="task.imageUrl" alt="Imagen de planta" width="200" height="300"  priority/>
-    <div class = "task-card-content">
+
+    <!-- The plant image is dynamically loaded using Angular's ngSrc directive -->
+    <img [ngSrc]="task.imageUrl" alt="Plant image" width="200" height="300" priority />
+
+    <!-- Container for additional content inside the task card -->
+    <div class="task-card-content">
+
+        <!-- The task date is displayed inside the card content area -->
         <mat-card-content>{{ task.date }}</mat-card-content>
+
+        <!-- The action to perform (e.g., "Watering", "Fertilizing") is shown as a subtitle -->
         <mat-card-subtitle>{{ task.action }}</mat-card-subtitle>
 
     </div>

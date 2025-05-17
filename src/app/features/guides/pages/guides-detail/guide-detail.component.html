@@ -1,36 +1,41 @@
 <div class="detail-container" *ngIf="guide">
+    <!-- Container displayed only if a guide object exists -->
+
     <div class="header">
+        <!-- Header section with a back arrow and the guide's title -->
         <span class="back-arrow" routerLink="/guides">←</span>
-            <h2>{{ guide.title }}</h2>
+        <h2>{{ guide.title }}</h2>
     </div>
 
-    <p class="date">Tipo: {{ guide.type }}</p>
+    <!-- Displays the type of the guide -->
+    <p class="date">Type: {{ guide.type }}</p>
 
     <div class="main">
+        <!-- Main content area with the guide image (or placeholder if none) -->
         <img [src]="guide.imageUrl || 'https://via.placeholder.com/200x200'" alt="{{ guide.title }}" />
 
         <div class="info">
-
             <div class="section">
-                <h4>Cuidado de la Planta</h4>
+                <!-- Section about plant care -->
+                <h4>Plant Care</h4>
                 <p>
-                    La {{ guide.name }} es una planta tropical de interior muy popular por su follaje espectacular. Tiene hojas grandes, verdes y brillantes, con cortes y perforaciones naturales que la hacen inconfundible.
+                    The {{ guide.name }} is a popular tropical indoor plant known for its spectacular foliage. It has large, green, shiny leaves with natural cuts and holes that make it unmistakable.
                 </p>
-                <br>
-                <br>
-                <h4>Luz </h4>
+                <br><br>
+                <!-- Section about light requirements -->
+                <h4>Light</h4>
                 <p>
-                    La {{ guide.name }} es una planta tropical de interior muy popular por su follaje espectacular. Tiene hojas grandes, verdes y brillantes, con cortes y perforaciones naturales que la hacen inconfundible.
+                    The {{ guide.name }} is a popular tropical indoor plant known for its spectacular foliage. It has large, green, shiny leaves with natural cuts and holes that make it unmistakable.
                 </p>
             </div>
         </div>
     </div>
 
     <div class="tasks">
-        <h4>Agua</h4>
+        <!-- Section about watering -->
+        <h4>Water</h4>
         <p>
-            La {{ guide.name }} es una planta tropical de interior muy popular por su follaje espectacular. Tiene hojas grandes, verdes y brillantes, con cortes y perforaciones naturales que la hacen inconfundible.
+            The {{ guide.name }} is a popular tropical indoor plant known for its spectacular foliage. It has large, green, shiny leaves with natural cuts and holes that make it unmistakable.
         </p>
     </div>
-
 </div>

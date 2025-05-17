@@ -1,15 +1,28 @@
 <div class="container">
-    <h2>Mis Plantas</h2>
-    <button routerLink="/plants/add" class="add-button">+ Agregar Planta</button>
+    <!-- Title of the section -->
+    <h2>My Plants</h2>
+
+    <!-- Button to navigate to the page for adding a new plant -->
+    <button routerLink="/plants/add" class="add-button">+ Add Plant</button>
 
     <div class="grid">
+        <!-- Iterate over the plants array and display each plant in a card -->
         <div class="plant-card" *ngFor="let plant of plants">
+            <!-- Plant image with alt text showing the plant’s name -->
             <img [src]="plant.imageUrl" alt="{{ plant.name }}" width="100px" height="100px" />
+
             <div class="plant-info">
+                <!-- Plant name -->
                 <h3>{{ plant.name }}</h3>
-                <p>Humedad: {{ plant.humidity }}</p>
-                <p>Próximo riego: {{ plant.nextWateringDate }}</p>
-                <button [routerLink]="['/plants', plant.id]" class="ver-btn">Ver planta</button>
+
+                <!-- Display the current humidity for the plant -->
+                <p>Humidity: {{ plant.humidity }}</p>
+
+                <!-- Show the next scheduled watering date -->
+                <p>Next watering: {{ plant.nextWateringDate }}</p>
+
+                <!-- Button to navigate to the detailed view of the selected plant -->
+                <button [routerLink]="['/plants', plant.id]" class="ver-btn">View Plant</button>
             </div>
         </div>
     </div>

@@ -1,11 +1,15 @@
 <div class="weather-card">
-    <h3>Condiciones climáticas</h3>
+    <!-- Weather conditions card header -->
+    <h3>Weather Conditions</h3>
 
     <div class="weather-info">
-        <p><strong>Temperatura:</strong> {{ temperature }} °C</p>
-        <p><strong>Humedad:</strong> {{ humidity }} %</p>
+        <!-- Displays the current temperature -->
+        <p><strong>Temperature:</strong> {{ temperature }} °C</p>
+        <!-- Displays the current humidity -->
+        <p><strong>Humidity:</strong> {{ humidity }} %</p>
     </div>
 
+    <!-- Displays an optional weather tip if available -->
     <div class="weather-tip" *ngIf="tip">
         <p>{{ tip }}</p>
     </div>

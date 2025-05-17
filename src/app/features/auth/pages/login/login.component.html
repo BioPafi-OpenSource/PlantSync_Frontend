@@ -1,17 +1,38 @@
+<!-- Container for the entire login page layout -->
 <div class="login-container">
+
+    <!-- Left side: Login form section -->
     <div class="login-form">
+        <!-- Heading for the login form -->
         <h2>Iniciar Sesión</h2>
+
+        <!-- Login form that triggers the login() method on submit -->
         <form (ngSubmit)="login()">
+            <!-- Email input field bound to the 'email' variable -->
             <input type="email" [(ngModel)]="email" name="email" placeholder="Correo" required>
+
+            <!-- Password input field bound to the 'password' variable -->
             <input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
+
+            <!-- Submit button to trigger login -->
             <button type="submit">Iniciar</button>
         </form>
+
+        <!-- Link to the registration page for new users -->
         <p>¿No tienes una cuenta? <a routerLink="/register">Register</a></p>
     </div>
 
+    <!-- Right side: Informational section about the application's purpose -->
     <div class="login-info">
+        <!-- Promotional heading highlighting the benefits of the app -->
         <h2>Tu Planta Siempre <br> Bien Cuidada, <br> Sin Complicaciones</h2>
+
+        <!-- Description of the application's features -->
         <p>Monitorea su estado, recibe notificaciones y accede a guías sin ser un experto</p>
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbACF_5_9ZIqxZTFLxTbYDll42F-h0keNMgr5vhWdU-kCDy1x5jaMjb-vOhAMZYkcMmgkOqefsGmeALW9qXiAdhyphenhyphenIPMT3z2JNypCS9ZEAC_O-j-W7gX7ysUMsPIQ1P9S9OFivpCeCqbY1vyv_479SoYYnbYI7gUfQSHW3IBpN6HTuO4dkrcH1KJ3HIBh0/s320/logo.jpg" alt="planta">
+
+        <!-- Image representing the plant care application -->
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbACF_5_9ZIqxZTFLxTbYDll42F-h0keNMgr5vhWdU-kCDy1x5jaMjb-vOhAMZYkcMmgkOqefsGmeALW9qXiAd--IPMT3z2JNypCS9ZEAC_O-j-W7gX7ysUMsPIQ1P9S9OFivpCeCqbY1vyv_479SoYYnbYI7gUfQSHW3IBpN6HTuO4dkrcH1KJ3HIBh0/s320/logo.jpg"
+             alt="planta">
     </div>
+
 </div>

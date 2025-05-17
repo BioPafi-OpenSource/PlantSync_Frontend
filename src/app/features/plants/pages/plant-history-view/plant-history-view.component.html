@@ -1,9 +1,11 @@
 <div class="history-container">
+    <!-- Header section with a back button linking to the plant detail page and a title -->
     <div class="header">
         <button class="back-button" [routerLink]="['/plants', plantId]">←</button>
-        <h2>Historial de Planta</h2>
+        <h2>Plant History</h2>
     </div>
 
+    <!-- Container for the line chart displaying historical data -->
     <div class="chart-container">
         <canvas baseChart
                 [data]="lineChartData"
@@ -11,19 +13,24 @@
                 chartType="line"
                 [legend]="false">
         </canvas>
-
     </div>
 
+    <!-- Container holding history event cards -->
     <div class="cards-container">
+        <!-- Loop through each history event to create a card -->
         <div class="history-card" *ngFor="let event of history">
             <div class="card-header">
+                <!-- Icon whose class is dynamically set based on event type -->
                 <span class="icon" [ngClass]="event.type.toLowerCase()"></span>
+                <!-- Display the event date formatted as day-month-year -->
                 <strong>{{ event.date | date:'dd MMM yyyy' }}</strong>
             </div>
+            <!-- Event type displayed in bold -->
             <p><strong>{{ event.type }}</strong></p>
-            <p>Hora: {{ event.time }}</p>
-            <p>Humedad: {{ event.humidity }}%</p>
+            <!-- Time of the event -->
+            <p>Time: {{ event.time }}</p>
+            <!-- Humidity percentage recorded during the event -->
+            <p>Humidity: {{ event.humidity }}%</p>
         </div>
     </div>
-
 </div>
