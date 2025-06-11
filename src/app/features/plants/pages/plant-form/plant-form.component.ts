@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
 import { Plant } from '../../models/plant';
-import {User} from "../../../../shared/models/user";
+import { User } from "../../../../shared/models/user";
 
 @Component({
   selector: 'app-plant-form',
@@ -44,6 +44,22 @@ export class PlantFormComponent implements OnInit {
         this.plantForm.patchValue(plant);
       });
     }
+  }
+
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) {
+      return;
+    }
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const base64Image = reader.result as string;
+      this.plantForm.patchValue({ imageUrl: base64Image });
+    };
+
+    reader.readAsDataURL(file);
   }
 
   onSubmit(): void {
