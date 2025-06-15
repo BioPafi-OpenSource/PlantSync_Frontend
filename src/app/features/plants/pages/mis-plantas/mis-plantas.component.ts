@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
 import { Plant } from '../../models/plant';
 
-import {User} from "../../../../shared/models/user";
+import {User} from "../../../auth/model/user.entity";
 import {RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
 

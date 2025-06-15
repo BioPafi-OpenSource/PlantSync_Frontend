@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
 import { Plant } from '../../models/plant';
-import { User } from "../../../../shared/models/user";
+import { User} from "../../../auth/model/user.entity";
 
 @Component({
   selector: 'app-plant-form',

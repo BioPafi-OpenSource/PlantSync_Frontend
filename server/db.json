@@ -2,22 +2,38 @@
   "users": [
     {
       "id": 1,
-      "name": "Javier",
       "email": "javier@example.com",
       "password": "123456"
     },
     {
       "id": 2,
-      "name": "Ana",
       "email": "ana@example.com",
       "password": "123456"
     },
     {
       "id": 3,
-      "name": "Renzo",
       "email": "renzo123@gmail.com",
-      "password": "renzo",
-      "plantIds": []
+      "password": "renzo"
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Javier",
+      "subscriptionPlan": "premium"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "name": "Ana",
+      "subscriptionPlan": "basic"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "name": "Renzo",
+      "subscriptionPlan": "pro"
     }
   ],
   "plants": [
@@ -33,7 +49,6 @@
       "userId": 1
     },
     {
-      "id": 2,
       "name": "Aloe Vera",
       "species": "Suculenta",
       "acquisitionDate": "2024-03-15",
@@ -41,6 +56,7 @@
       "nextWateringDate": "2024-05-16",
       "imageUrl": "https://m.media-amazon.com/images/I/71M0LvfvddL._AC_SL1500_.jpg",
       "notificationsEnabled": false,
+      "id": 2,
       "userId": 1
     },
     {
@@ -57,81 +73,34 @@
   ],
   "tasks": [
     {
+      "id": 2,
+      "date": "2025-06-15",
+      "action": "Regar planta",
+      "completed": false,
+      "plantId": 2
+    },
+    {
+      "id": 2,
+      "date": "2025-06-22",
+      "action": "Regar planta",
+      "completed": false,
+      "plantId": 1
+    },
+
+    {
+      "id": 2,
+      "date": "2025-06-17",
+      "action": "Regar planta",
+      "completed": false,
+      "plantId": 1
+    },
+
+    {
       "id": 3,
-      "date": "2025-05-17",
-      "action": "Poner fertilizante",
-      "completed": false,
-      "plant": {
-        "plantId": 103,
-        "plantName": "Lavanda",
-        "imageUrl": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
-    },
-    {
-      "id": 4,
-      "date": "2025-05-18",
-      "action": "Podar ramas",
-      "completed": false,
-      "plant": {
-        "plantId": 104,
-        "plantName": "Romero",
-        "imageUrl": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
-    },
-    {
-      "id": 5,
-      "date": "2025-05-19",
-      "action": "Regar",
-      "completed": false,
-      "plant": {
-        "plantId": 105,
-        "plantName": "Cactus",
-        "imageUrl": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
-    },
-    {
-      "id": 6,
-      "date": "2025-05-16",
-      "action": "Regar ",
-      "completed": false,
-      "plant": {
-        "plantId": 106,
-        "plantName": "Suculenta",
-        "imageUrl": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
-    },
-    {
-      "id": 7,
-      "date": "2025-06-01",
-      "action": "Limpiar maceta",
-      "completed": false,
-      "plant": {
-        "plantId": 107,
-        "plantName": "Orquídea",
-        "imageUrl": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
-    },
-    {
-      "id": 8,
-      "date": "2025-07-05",
-      "action": "Revisar raíces",
-      "completed": false,
-      "plant": {
-        "plantId": 108,
-        "plantName": "Menta",
-        "imageUrl": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
-    },
-    {
-      "id": 9,
-      "date": "2025-08-20",
-      "action": "Regar pLanta",
-      "completed": false,
-      "plant": {
-        "plantId": 109,
-        "plantName": "Bambú",
-        "imageUrl": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
+      "date": "2025-06-17",
+      "action": "Rotar planta",
+      "completed": true,
+      "plantId": 3
     }
   ],
   "guides": [

@@ -1,15 +1,14 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Task} from "../../model/task.entity";
-import {NgOptimizedImage} from "@angular/common";
-import {MatCard, MatCardContent, MatCardSubtitle, MatCardTitle} from "@angular/material/card";
-import {MatDialog} from "@angular/material/dialog";
-import {TaskService} from "../../services/task.service";
-import {TaskConfirmationDialogComponent} from "../task-confirmation-dialog/task-confirmation-dialog.component";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {Task, TaskViewModel} from "../../model/task.entity";
+import { NgOptimizedImage } from "@angular/common";
+import { MatCard, MatCardContent, MatCardSubtitle, MatCardTitle } from "@angular/material/card";
+import { MatDialog } from "@angular/material/dialog";
+import { TaskService } from "../../services/task.service";
+import { TaskConfirmationDialogComponent } from "../task-confirmation-dialog/task-confirmation-dialog.component";
 
 @Component({
   selector: 'app-task-item',
   imports: [
-
     MatCard,
     NgOptimizedImage,
     MatCardTitle,
@@ -22,13 +21,18 @@ import {TaskConfirmationDialogComponent} from "../task-confirmation-dialog/task-
 export class TaskItemComponent {
 
   /**
-   * canConfirm: if plant task is not assigned for today, it wont be clickable
-   *
+   * canConfirm: If the plant task is not scheduled for today,
+   * the card will not be clickable to prevent confirmation.
    */
+  @Input() task!: TaskViewModel;
 
-  @Input() task!: Task;
+  // Determines whether the task can be confirmed (clicked)
   @Input() canConfirm: boolean = true;
-  @Output() taskClicked = new EventEmitter<Task>();
+
+  // Emits the task when clicked
+  @Output() taskClicked = new EventEmitter<TaskViewModel>();
+
+  // Emits the task ID when deleted
   @Output() taskDeleted = new EventEmitter<number>();
 
   constructor(
@@ -36,10 +40,15 @@ export class TaskItemComponent {
       private taskService: TaskService
   ) {}
 
-
-
+  /**
+   * Handles the click event on the task card.
+   * If confirmation is allowed, opens a confirmation dialog.
+   * If the user confirms, deletes the task using TaskService
+   * and emits the deleted task's ID.
+   */
   onClick(): void {
     if (!this.canConfirm) return;
+
     const dialogRef = this.dialog.open(TaskConfirmationDialogComponent);
 
     dialogRef.afterClosed().subscribe(confirmed => {
