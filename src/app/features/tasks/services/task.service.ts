@@ -17,17 +17,6 @@ export class TaskService extends BaseService<Task> {
         super();
     }
 
-    // Marks a task as completed by fetching it, setting its completed flag to true,
-    // and then updating it via the API.
-    completeTask(id: number): void {
-        this.getById(id).subscribe(task => {
-            task.completed = true;
-            this.update(id, task).subscribe();
-        });
-    }
 
-    // Deletes a task by its ID using the base service delete method.
-    deleteTask(id: number): void {
-        this.delete(id).subscribe();
-    }
+
 }

@@ -6,3 +6,16 @@
     font-size: 28px;
     margin-bottom: 24px;
 }
+.task-view-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.task-view-header button{
+    background-color: #6FBF73;
+    justify-content: start;
+    border-radius: 8px;
+
+}
