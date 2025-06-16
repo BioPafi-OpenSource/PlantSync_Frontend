@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import { PlantHistoryService } from '../../services/plant-history.service';
-import { PlantHistory } from '../../models/plant-history.model';
+import { PlantHistory } from '../../model/plant-history.model';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartConfiguration } from 'chart.js';
 

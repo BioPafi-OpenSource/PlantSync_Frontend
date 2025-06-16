@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" placeholder="Tu nombre">
+
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput formControlName="email" placeholder="tucorreo@ejemplo.com">
+
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Plan de suscripción</mat-label>
+        <mat-select formControlName="subscriptionPlan">
+            <mat-option value="basic">Basic</mat-option>
+            <mat-option value="premium">Premium</mat-option>
+            <mat-option value="pro">Pro</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div style="height: 6rem;"></div>
+    <div class="button-container">
+        <button mat-raised-button class = "save-button"
+                 type="submit" [disabled]="form.invalid">
+            Guardar cambios
+        </button>
+    </div>
+
+</form>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
-import { Plant } from '../../models/plant';
+import { Plant } from '../../model/plant';
 
 import {User} from "../../../auth/model/user.entity";
 import {RouterLink} from "@angular/router";

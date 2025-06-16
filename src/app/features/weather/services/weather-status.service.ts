@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BaseService} from "../../../shared/services/base.service";
-import { WeatherStatus} from "../models/weather-status.model";
+import { WeatherStatus} from "../model/weather-status.model";
 import { environment} from "../../../../environments/environment.development";
 
 @Injectable({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatCard } from "@angular/material/card";
 import { NgForOf, NgIf } from "@angular/common";
 import { MatButton } from "@angular/material/button";
-import { Plant } from "../../../plants/models/plant";
+import { Plant } from "../../../plants/model/plant";
 import { PlantService } from "../../../plants/services/plant.service";
 import { MatFormField, MatLabel } from "@angular/material/input";
 import { MatOption, MatSelect } from "@angular/material/select";

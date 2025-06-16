@@ -1,31 +1,28 @@
-// src/app/shared/services/profile/profile.service.ts
+
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from "../../../../environments/environment.development";
 import { Profile} from "../model/profile.entity";
+import {BaseService} from "../../../shared/services/base.service";
 
 @Injectable({
     providedIn: 'root'
 })
-export class ProfileService {
-    private apiUrl = `${environment.BASE_URL}/profiles`;
+export class ProfileService extends BaseService<Profile> {
 
-    constructor(private http: HttpClient) {}
+    override resourceEndpoint = environment.ENDPOINT_PATH_PROFILES;
 
-    getProfiles(): Observable<Profile[]> {
-        return this.http.get<Profile[]>(this.apiUrl);
+    private apiUrl = `${environment.BASE_URL}${this.resourceEndpoint}`;
+
+    constructor() {
+        super();
     }
 
-    getProfileByUserId(userId: number): Observable<Profile[]> {
-        return this.http.get<Profile[]>(`${this.apiUrl}?userId=${userId}`);
-    }
+
 
     createProfile(profile: Profile): Observable<Profile> {
         return this.http.post<Profile>(this.apiUrl, profile);
     }
 
-    updateProfile(id: number, profile: Partial<Profile>): Observable<Profile> {
-        return this.http.patch<Profile>(`${this.apiUrl}/${id}`, profile);
-    }
+
 }
