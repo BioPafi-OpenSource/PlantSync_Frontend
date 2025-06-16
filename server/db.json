@@ -38,7 +38,6 @@
   ],
   "plants": [
     {
-      "id": 1,
       "name": "Monstera Deliciosa",
       "species": "Planta Trepadora",
       "acquisitionDate": "2024-04-01",
@@ -46,7 +45,8 @@
       "nextWateringDate": "2024-05-14",
       "imageUrl": "https://static.wixstatic.com/media/b4df8d_29038c38771f4c67aa279995240d5717~mv2.jpg",
       "notificationsEnabled": true,
-      "userId": 1
+      "userId": 1,
+      "id": 1
     },
     {
       "name": "Aloe Vera",

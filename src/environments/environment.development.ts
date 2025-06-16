@@ -7,6 +7,8 @@ export const environment = {
     ENDPOINT_PATH_WEATHER_STATUS: '/weatherStatus',
     ENDPOINT_PATH_GUIDES: '/guides',
     ENDPOINT_PATH_PROFILES: '/profiles',
+    ENDPOINT_PATH_USERS: '/users',
+
 
 
 
