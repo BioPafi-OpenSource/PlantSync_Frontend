@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Añadir Tarea</h1>
+
+<div mat-dialog-content>
+    <form [formGroup]="form" class="task-form-row">
+        <!-- Select de planta -->
+        <mat-form-field appearance="fill">
+            <mat-label>Planta</mat-label>
+            <mat-select formControlName="plantId" required>
+                <mat-option *ngFor="let plant of plants" [value]="plant.id">
+                    {{ plant.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Acción -->
+        <mat-form-field appearance="fill">
+            <mat-label>Acción</mat-label>
+            <input matInput formControlName="action" placeholder="Ej: Regar, podar, etc." required>
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-flat-button color="primary" (click)="onSubmit()" [disabled]="form.invalid">Guardar</button>
+</div>

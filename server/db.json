@@ -74,7 +74,7 @@
   "tasks": [
     {
       "id": 2,
-      "date": "2025-06-15",
+      "date": "2025-06-16",
       "action": "Regar planta",
       "completed": false,
       "plantId": 2
@@ -99,6 +99,15 @@
       "action": "Rotar planta",
       "completed": true,
       "plantId": 3
+    },
+
+    {
+      "id": 5,
+      "completed": false,
+      "userId": 1,
+      "plantId": 2,
+      "action": "Abonar",
+      "date": "2025-06-17"
     }
   ],
   "guides": [

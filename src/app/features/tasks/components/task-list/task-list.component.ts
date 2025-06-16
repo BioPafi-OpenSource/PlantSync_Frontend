@@ -8,30 +8,34 @@ import { TaskItemComponent } from "../task-item/task-item.component";
 import { NgForOf } from "@angular/common";
 import {PlantService} from "../../../plants/services/plant.service";
 import {forkJoin} from "rxjs";
+
+
 @Component({
   selector: 'app-task-list', // Component selector used in HTML
   templateUrl: './task-list.component.html', // HTML template file
   imports: [
     TaskItemComponent, // Import the custom task item component
-    NgForOf             // Required for *ngFor directive
+    NgForOf,
+
+    // Required for *ngFor directive
   ],
   styleUrls: ['./task-list.component.css'] // CSS style for the component
 })
 export class TaskListComponent implements OnInit {
-  // Arrays to hold today's tasks and upcoming tasks
   todayTasks: TaskViewModel[] = [];
   upcomingTasks: TaskViewModel[] = [];
 
-  // Inject TaskService and MatDialog into the constructor
-  constructor(private taskService: TaskService,
-              public dialog: MatDialog,
-              private plantService: PlantService,
-
-
+  constructor(
+      private taskService: TaskService,
+      public dialog: MatDialog,
+      private plantService: PlantService
   ) {}
 
-  // Lifecycle hook that runs when the component is initialized
   ngOnInit(): void {
+    this.refreshTasks();
+  }
+
+  public refreshTasks(): void {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
     const currentUserId = currentUser.id;
 
@@ -51,7 +55,7 @@ export class TaskListComponent implements OnInit {
               imageUrl: plant.imageUrl
             } as TaskViewModel;
           })
-          .filter((t): t is TaskViewModel => t !== null); // Elimina nulls
+          .filter((t): t is TaskViewModel => t !== null);
 
       const today = new Date();
       today.setHours(0, 0, 0, 0);
@@ -75,20 +79,19 @@ export class TaskListComponent implements OnInit {
     });
   }
 
-  // Opens a confirmation dialog when the user tries to delete a task
   openDialog(task: Task): void {
     const dialogRef = this.dialog.open(TaskConfirmationDialogComponent, {
       width: '250px',
       data: { task: task }
     });
 
-    // After the dialog is closed, check if user confirmed deletion
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.deleteTask(task.id); // Delete the task if confirmed
+        this.deleteTask(task.id);
       }
     });
   }
+
 
   // Removes a task by ID from both today's and upcoming tasks
   deleteTask(id: number): void {

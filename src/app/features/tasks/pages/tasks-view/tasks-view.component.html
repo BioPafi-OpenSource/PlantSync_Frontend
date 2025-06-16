@@ -1,4 +1,9 @@
-<div class="task-view">
+<div class="task-view-header">
     <h1>Tareas</h1>
-    <app-task-list></app-task-list>
+    <button mat-flat-button color="primary" (click)="openAddTaskDialog()">
+
+        Añadir tarea
+    </button>
 </div>
+
+<app-task-list></app-task-list>
