@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Plant } from '../models/plant';
+import { Plant } from '../model/plant';
 import { BaseService} from "../../../shared/services/base.service";
 import { environment} from "../../../../environments/environment.development";
 

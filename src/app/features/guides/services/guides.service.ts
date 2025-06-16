@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Guide } from '../models/guide.model';
+import { Guide } from '../model/guide.model';
 import { BaseService} from "../../../shared/services/base.service";
 import { environment} from "../../../../environments/environment.development";
 import { Observable } from 'rxjs';

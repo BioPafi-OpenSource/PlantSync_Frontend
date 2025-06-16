@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { GuidesService } from '../../services/guides.service';
-import { Guide } from '../../models/guide.model';
+import { Guide } from '../../model/guide.model';
 
 @Component({
   selector: 'app-mis-guias',
