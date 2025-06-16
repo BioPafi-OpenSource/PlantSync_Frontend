@@ -59,7 +59,7 @@ export class ConfigurationFormComponent implements OnInit {
       });
     });
 
-    this.userService.getUserById(this.currentUserId).subscribe((user: User) => {
+    this.userService.getById(this.currentUserId).subscribe((user: User) => {
       this.form.patchValue({ email: user.email });
     });
   }

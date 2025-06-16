@@ -66,7 +66,19 @@ export class PlantFormComponent implements OnInit {
     const formData = this.plantForm.value;
 
     if (this.isEditMode) {
-      this.plantService.updatePlant(this.plantId, formData).subscribe(() => {
+      const currentUserJson = localStorage.getItem('currentUser');
+      if (!currentUserJson) return;
+
+      const currentUser: User = JSON.parse(currentUserJson);
+
+      const updatedPlant: Plant = {
+        ...formData,
+        userId: currentUser.id,
+        id: this.plantId,
+        nextWateringDate: formData.nextWateringDate ?? this.generateNextWateringDate()
+      };
+
+      this.plantService.updatePlant(this.plantId, updatedPlant).subscribe(() => {
         this.router.navigate(['/plants']);
       });
     } else {
@@ -88,6 +100,7 @@ export class PlantFormComponent implements OnInit {
       });
     }
   }
+
 
   generateNextWateringDate(): string {
     const today = new Date();
