@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
-import { Plant } from '../../models/plant';
-import {User} from "../../../../shared/models/user";
+import { Plant } from '../../model/plant';
+import { User} from "../../../auth/model/user.entity";
 
 @Component({
   selector: 'app-plant-form',
@@ -46,11 +46,39 @@ export class PlantFormComponent implements OnInit {
     }
   }
 
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) {
+      return;
+    }
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const base64Image = reader.result as string;
+      this.plantForm.patchValue({ imageUrl: base64Image });
+    };
+
+    reader.readAsDataURL(file);
+  }
+
   onSubmit(): void {
     const formData = this.plantForm.value;
 
     if (this.isEditMode) {
-      this.plantService.updatePlant(this.plantId, formData).subscribe(() => {
+      const currentUserJson = localStorage.getItem('currentUser');
+      if (!currentUserJson) return;
+
+      const currentUser: User = JSON.parse(currentUserJson);
+
+      const updatedPlant: Plant = {
+        ...formData,
+        userId: currentUser.id,
+        id: this.plantId,
+        nextWateringDate: formData.nextWateringDate ?? this.generateNextWateringDate()
+      };
+
+      this.plantService.updatePlant(this.plantId, updatedPlant).subscribe(() => {
         this.router.navigate(['/plants']);
       });
     } else {
@@ -72,6 +100,7 @@ export class PlantFormComponent implements OnInit {
       });
     }
   }
+
 
   generateNextWateringDate(): string {
     const today = new Date();

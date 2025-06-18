@@ -19,8 +19,8 @@
             ¿Desea activar las notificaciones?
         </label>
 
-        <label for="imageUrl">Foto de tu planta</label>
-        <input id="imageUrl" type="text" formControlName="imageUrl" />
+        <label for="imageFile">Foto de tu planta</label>
+        <input id="imageFile" type="file" (change)="onFileSelected($event)" accept="image/*">
 
         <button type="submit" [disabled]="plantForm.invalid">
             {{ isEditMode ? 'Guardar cambios' : 'Añadir' }}
