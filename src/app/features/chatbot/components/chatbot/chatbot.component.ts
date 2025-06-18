@@ -53,7 +53,14 @@ export class ChatbotComponent implements OnInit {
   }
 
   loadPlants() {
-    this.plantService.getPlants().subscribe({
+
+    const currentUserJson = localStorage.getItem('currentUser');
+    if (!currentUserJson) return;
+
+    const currentUser = JSON.parse(currentUserJson);
+    const userId = currentUser.id;
+
+    this.plantService.getPlantsByUserId(userId).subscribe({
       next: (plants) => {
         this.plants = plants;
       },
