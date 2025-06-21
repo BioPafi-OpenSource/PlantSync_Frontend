@@ -4,9 +4,10 @@ import { RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
 import { Plant } from '../../model/plant';
 
-import {User} from "../../../auth/model/user.entity";
+
 import {RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
+import {Profile} from "../../../profile/model/profile.entity";
 
 @Component({
   selector: 'app-mis-plantas',
@@ -25,12 +26,12 @@ export class MisPlantasComponent implements OnInit {
   constructor(private plantService: PlantService) {}
 
   ngOnInit(): void {
-    const currentUserJson = localStorage.getItem('currentUser');
-    if (!currentUserJson) return;
+    const currentProfileJson = localStorage.getItem('currentProfile');
+    if (!currentProfileJson) return;
 
-    const currentUser: User = JSON.parse(currentUserJson);
+    const currentProfile: Profile = JSON.parse(currentProfileJson);
 
-    this.plantService.getPlantsByUserId(currentUser.id).subscribe((plants) => {
+    this.plantService.getPlantsByProfileId(currentProfile.id).subscribe((plants) => {
       this.plants = plants;
     });
   }

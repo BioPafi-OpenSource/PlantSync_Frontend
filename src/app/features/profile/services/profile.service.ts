@@ -12,7 +12,8 @@ export class ProfileService extends BaseService<Profile> {
 
     override resourceEndpoint = environment.ENDPOINT_PATH_PROFILES;
 
-    private apiUrl = `${environment.BASE_URL}${this.resourceEndpoint}`;
+    private apiUrl = `${this.serverBaseUrl}${this.resourceEndpoint}`;
+
 
     constructor() {
         super();

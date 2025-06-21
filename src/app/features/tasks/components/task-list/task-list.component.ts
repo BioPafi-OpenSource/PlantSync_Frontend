@@ -36,14 +36,14 @@ export class TaskListComponent implements OnInit {
   }
 
   public refreshTasks(): void {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
-    const currentUserId = currentUser.id;
+    const currentProfile = JSON.parse(localStorage.getItem('currentProfile') || '{}');
+    const currentProfileId = currentProfile.id;
 
     forkJoin({
       tasks: this.taskService.getAll(),
       plants: this.plantService.getAll()
     }).subscribe(({ tasks, plants }) => {
-      const userPlants = plants.filter(p => p.userId === currentUserId);
+      const userPlants = plants.filter(p => p.profileId === currentProfileId);
 
       const taskViewModels: TaskViewModel[] = tasks
           .map(task => {

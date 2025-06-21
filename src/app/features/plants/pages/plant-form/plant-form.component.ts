@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
 import { Plant } from '../../model/plant';
-import { User} from "../../../auth/model/user.entity";
+import {Profile} from "../../../profile/model/profile.entity";
 
 @Component({
   selector: 'app-plant-form',
@@ -66,14 +66,14 @@ export class PlantFormComponent implements OnInit {
     const formData = this.plantForm.value;
 
     if (this.isEditMode) {
-      const currentUserJson = localStorage.getItem('currentUser');
-      if (!currentUserJson) return;
+      const currentProfileJson = localStorage.getItem('currentProfile');
+      if (!currentProfileJson) return;
 
-      const currentUser: User = JSON.parse(currentUserJson);
+      const currentProfile: Profile = JSON.parse(currentProfileJson);
 
       const updatedPlant: Plant = {
         ...formData,
-        userId: currentUser.id,
+        profileId: currentProfile.id,
         id: this.plantId,
         nextWateringDate: formData.nextWateringDate ?? this.generateNextWateringDate()
       };
@@ -82,14 +82,15 @@ export class PlantFormComponent implements OnInit {
         this.router.navigate(['/plants']);
       });
     } else {
-      const currentUserJson = localStorage.getItem('currentUser');
-      if (!currentUserJson) return;
+      const currentProfileJson = localStorage.getItem('currentProfile');
+      if (!currentProfileJson) return;
 
-      const currentUser: User = JSON.parse(currentUserJson);
+      const currentProfile: Profile = JSON.parse(currentProfileJson);
+
 
       const newPlant: Plant = {
         ...formData,
-        userId: currentUser.id,
+        profileId: currentProfile.id,
         nextWateringDate: this.generateNextWateringDate()
       };
 

@@ -4,7 +4,7 @@ export class Task {
     action: string;
     completed: boolean;
     plantId: number;
-    userId: number;
+    profileId: number;
 
     constructor() {
 
@@ -13,7 +13,7 @@ export class Task {
         this.action = '';
         this.completed = false;
         this.plantId = 0;
-        this.userId = 0;
+        this.profileId = 0;
 
     }
 

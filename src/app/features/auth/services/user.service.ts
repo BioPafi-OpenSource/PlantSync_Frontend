@@ -9,7 +9,10 @@ import {BaseService} from "../../../shared/services/base.service";
 export class UserService  extends  BaseService<User>{
 
   override resourceEndpoint = environment.ENDPOINT_PATH_USERS;
-  private apiUrl = `${environment.BASE_URL}${this.resourceEndpoint}`;
+
+
+
+  private apiUrl = `${this.serverBaseUrl}${this.resourceEndpoint}`;
 
   constructor() {
     super();
@@ -22,10 +25,12 @@ export class UserService  extends  BaseService<User>{
   }
 
   registerUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+    return this.http.post<User>(`${this.apiUrl}/sign-up`, user); // <-- usa /sign-up
   }
 
-
+  signIn(credentials: { email: string, password: string }): Observable<User> {
+    return this.http.post<User>(`${this.apiUrl}/sign-in`, credentials);
+  }
 
 
   updateUser(id: number, user: User): Observable<User> {

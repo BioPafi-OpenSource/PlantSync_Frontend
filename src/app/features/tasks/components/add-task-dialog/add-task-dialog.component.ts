@@ -24,6 +24,7 @@ export class AddTaskDialogComponent implements OnInit {
   form!: FormGroup;
   plants: Plant[] = [];
   currentUserId!: number;
+  profileId!: number;
 
   constructor(
       private fb: FormBuilder,
@@ -33,10 +34,11 @@ export class AddTaskDialogComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const userJson = localStorage.getItem('currentUser');
-    if (!userJson) return;
+    const profileJson = localStorage.getItem('currentProfile');
+    if (!profileJson) return;
 
-    this.currentUserId = JSON.parse(userJson).id;
+    const currentProfile = JSON.parse(profileJson);
+    this.profileId = currentProfile.id;
 
     this.form = this.fb.group({
       plantId: ['', Validators.required],
@@ -44,7 +46,7 @@ export class AddTaskDialogComponent implements OnInit {
       date: ['', Validators.required]
     });
 
-    this.plantService.getPlantsByUserId(this.currentUserId).subscribe(plants => {
+    this.plantService.getPlantsByProfileId(this.profileId).subscribe(plants => {
       this.plants = plants;
     });
   }
@@ -58,7 +60,7 @@ export class AddTaskDialogComponent implements OnInit {
     const task: Task = {
       id: 0,
       completed: false,
-      userId: this.currentUserId,
+      profileId: this.profileId,
       ...this.form.value,
       date: formattedDate,
     };

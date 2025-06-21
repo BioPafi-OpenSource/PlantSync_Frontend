@@ -53,6 +53,9 @@ export class ConfigurationFormComponent implements OnInit {
 
     this.profileService.getById(this.currentUserId).subscribe((profile: Profile) => {
       this.profileId = profile.id;
+
+      localStorage.setItem('currentProfile', JSON.stringify(profile));
+
       this.form.patchValue({
         name: profile.name,
         subscriptionPlan: profile.subscriptionPlan

@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WeatherService } from '../../services/weather.service';
 import { WeatherTip } from '../../model/weather-tip.model';
-import { WeatherStatus } from '../../model/weather-status.model';
+
 
 @Component({
   selector: 'app-weather-card',
