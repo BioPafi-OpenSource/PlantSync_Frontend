@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Plant } from '../models/plant';
+import { Plant } from '../model/plant';
 import { BaseService} from "../../../shared/services/base.service";
 import { environment} from "../../../../environments/environment.development";
 
@@ -9,16 +9,15 @@ import { environment} from "../../../../environments/environment.development";
 export class PlantService extends BaseService<Plant> {
 
   override resourceEndpoint: string = environment.ENDPOINT_PATH_PLANTS;
+  override serverBaseUrl: string = "http://localhost:8080/api/v1";
+
 
   constructor() {
     super();
   }
 
-  // Funciones explícitas reutilizando la lógica base
 
-  getPlants() {
-    return this.getAll();
-  }
+
 
   getPlantById(id: number | string) {
     return this.getById(id);
@@ -36,8 +35,11 @@ export class PlantService extends BaseService<Plant> {
     return this.delete(id);
   }
 
-  getPlantsByUserId(userId: number | string) {
-    return this.getByQuery('userId', userId);
+
+
+  getPlantsByProfileId(profileId: number | string) {
+    return this.getByQuery('profileId', profileId);
   }
+
 
 }

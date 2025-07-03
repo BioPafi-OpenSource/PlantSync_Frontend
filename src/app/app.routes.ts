@@ -5,7 +5,7 @@ import { plantsRoutes } from './features/plants/plants-routing.module';
 import {tasksRoutes} from "./features/tasks/tasks-routing.module";
 import {chatbotRoutes} from "./features/chatbot/chatbot-routing.module";
 
-import { tasksRoutes } from './features/tasks/tasks-routing.module';
+import {configRoutes} from "./features/profile/config.routing.module";
 import { guidesRoutes } from './features/guides/guides-routing.module';
 import {authGuard} from "./core/guards/auth.guard";
 
@@ -47,6 +47,10 @@ export const routes: Routes = [
             {
                 path: 'guides',
                 children: guidesRoutes
+            },
+            {
+                path: 'configuration',
+                children: configRoutes
             }
 
         ]

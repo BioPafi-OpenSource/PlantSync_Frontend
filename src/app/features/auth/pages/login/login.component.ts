@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
 import { UserService } from '../../services/user.service';
-import { User} from "../../../../shared/models/user";
+import {ProfileService} from "../../../profile/services/profile.service";
 import {FormsModule} from "@angular/forms";
-import {NgIf} from "@angular/common";
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   imports: [
     FormsModule,
-    RouterLink,
-    NgIf
+    RouterLink
+
   ],
   styleUrls: ['./login.component.css']
 })
@@ -22,6 +22,7 @@ export class LoginComponent {
 
   constructor(
       private userService: UserService,
+      private profileService: ProfileService,
       private router: Router
   ) {}
 
@@ -30,7 +31,12 @@ export class LoginComponent {
       const user = users.find(u => u.password === this.password);
       if (user) {
         localStorage.setItem('currentUser', JSON.stringify(user));
-        this.router.navigate(['/plants']);
+
+        this.profileService.getById(user.id).subscribe(profile => {
+          localStorage.setItem('currentProfile', JSON.stringify(profile));
+
+          this.router.navigate(['/plants']);
+        });
       } else {
         this.error = 'Correo o contraseña incorrectos';
       }

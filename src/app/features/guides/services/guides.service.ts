@@ -1,21 +1,26 @@
-// src/app/features/guides/services/guides.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Guide } from '../models/guide.model';
+import { Guide } from '../model/guide.model';
+import { BaseService} from "../../../shared/services/base.service";
+import { environment} from "../../../../environments/environment.development";
 import { Observable } from 'rxjs';
 
-//SERVICIOS QUE REALIZA LAS GUIAS
-@Injectable({ providedIn: 'root' })
-export class GuidesService {
-    private apiUrl = 'http://localhost:3000/guides';
+@Injectable({
+    providedIn: 'root'
+})
+export class GuidesService extends BaseService<Guide> {
 
-    constructor(private http: HttpClient) {}
+    override serverBaseUrl: string = "http://localhost:8080/api/v1";
+    override resourceEndpoint: string = environment.ENDPOINT_PATH_GUIDES;
+
+    constructor() {
+        super();
+    }
 
     getGuides(): Observable<Guide[]> {
-        return this.http.get<Guide[]>(this.apiUrl);
+        return this.getAll();
     }
 
     getGuideById(id: number): Observable<Guide> {
-        return this.http.get<Guide>(`${this.apiUrl}/${id}`);
+        return this.getById(id);
     }
 }

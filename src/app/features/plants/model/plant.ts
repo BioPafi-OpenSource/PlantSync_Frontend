@@ -7,7 +7,7 @@ export class Plant {
     nextWateringDate: string;
     imageUrl: string;
     notificationsEnabled: boolean;
-    userId: number;
+    profileId: number;
 
 
     constructor() {
@@ -19,6 +19,6 @@ export class Plant {
         this.nextWateringDate = "";
         this.imageUrl = "";
         this.notificationsEnabled = false;
-        this.userId = 0;
+        this.profileId = 0;
     }
 }

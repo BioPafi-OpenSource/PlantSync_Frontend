@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PlantService } from '../../services/plant.service';
-import { Plant } from '../../models/plant';
-import {User} from "../../../../shared/models/user";
+import { Plant } from '../../model/plant';
+import {Profile} from "../../../profile/model/profile.entity";
 
 @Component({
   selector: 'app-plant-form',
@@ -46,22 +46,51 @@ export class PlantFormComponent implements OnInit {
     }
   }
 
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) {
+      return;
+    }
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const base64Image = reader.result as string;
+      this.plantForm.patchValue({ imageUrl: base64Image });
+    };
+
+    reader.readAsDataURL(file);
+  }
+
   onSubmit(): void {
     const formData = this.plantForm.value;
 
     if (this.isEditMode) {
-      this.plantService.updatePlant(this.plantId, formData).subscribe(() => {
+      const currentProfileJson = localStorage.getItem('currentProfile');
+      if (!currentProfileJson) return;
+
+      const currentProfile: Profile = JSON.parse(currentProfileJson);
+
+      const updatedPlant: Plant = {
+        ...formData,
+        profileId: currentProfile.id,
+        id: this.plantId,
+        nextWateringDate: formData.nextWateringDate ?? this.generateNextWateringDate()
+      };
+
+      this.plantService.updatePlant(this.plantId, updatedPlant).subscribe(() => {
         this.router.navigate(['/plants']);
       });
     } else {
-      const currentUserJson = localStorage.getItem('currentUser');
-      if (!currentUserJson) return;
+      const currentProfileJson = localStorage.getItem('currentProfile');
+      if (!currentProfileJson) return;
 
-      const currentUser: User = JSON.parse(currentUserJson);
+      const currentProfile: Profile = JSON.parse(currentProfileJson);
+
 
       const newPlant: Plant = {
         ...formData,
-        userId: currentUser.id,
+        profileId: currentProfile.id,
         nextWateringDate: this.generateNextWateringDate()
       };
 
@@ -72,6 +101,7 @@ export class PlantFormComponent implements OnInit {
       });
     }
   }
+
 
   generateNextWateringDate(): string {
     const today = new Date();

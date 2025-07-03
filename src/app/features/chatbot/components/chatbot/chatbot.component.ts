@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatCard } from "@angular/material/card";
 import { NgForOf, NgIf } from "@angular/common";
 import { MatButton } from "@angular/material/button";
-import { Plant } from "../../../plants/models/plant";
+import { Plant } from "../../../plants/model/plant";
 import { PlantService } from "../../../plants/services/plant.service";
 import { MatFormField, MatLabel } from "@angular/material/input";
 import { MatOption, MatSelect } from "@angular/material/select";
@@ -53,7 +53,14 @@ export class ChatbotComponent implements OnInit {
   }
 
   loadPlants() {
-    this.plantService.getPlants().subscribe({
+
+    const currentProfileJson = localStorage.getItem('currentProfile');
+    if (!currentProfileJson) return;
+
+    const currentProfile = JSON.parse(currentProfileJson);
+    const profileId = currentProfile.id;
+
+    this.plantService.getPlantsByProfileId(profileId).subscribe({
       next: (plants) => {
         this.plants = plants;
       },
