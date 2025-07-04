@@ -1,0 +1,12 @@
+<div class="chat-input-container">
+    <input
+            type="text"
+            [(ngModel)]="userInput"
+            (keydown.enter)="sendMessage()"
+            placeholder="Haz tu pregunta sobre plantas..."
+            [disabled]="loading"
+    />
+    <button (click)="sendMessage()" [disabled]="loading || !userInput.trim()">
+        {{ loading ? 'Enviando...' : 'Enviar' }}
+    </button>
+</div>
