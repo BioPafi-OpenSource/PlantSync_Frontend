@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
+import { ChatbotPageComponent } from './pages/chatbot-page/chatbot-page.component';
 
 export const chatbotRoutes: Routes = [
     {
         path: '',
-        loadComponent: () =>
-            import('./pages/chatbot-view/chatbot-view.component').then(m => m.ChatbotViewComponent)
+        component: ChatbotPageComponent
     }
 ];

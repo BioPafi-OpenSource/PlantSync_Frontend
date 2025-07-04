@@ -1,0 +1,7 @@
+<div class="chat-display">
+    <div *ngFor="let msg of messages" [ngClass]="msg.role">
+        <div class="bubble">
+            <span>{{ msg.content }}</span>
+        </div>
+    </div>
+</div>

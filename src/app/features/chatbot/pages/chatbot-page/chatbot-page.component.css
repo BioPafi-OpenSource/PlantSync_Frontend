@@ -1,0 +1,30 @@
+.chatbot-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.chatbot-container {
+    width: 100%;
+    max-width: 600px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .chatbot-wrapper {
+        padding: 1rem;
+    }
+
+    .chatbot-container {
+        height: 90vh;
+        max-width: 100%;
+    }
+}

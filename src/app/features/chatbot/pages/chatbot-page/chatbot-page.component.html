@@ -1,0 +1,9 @@
+<div class="chatbot-wrapper">
+    <div class="chatbot-container">
+        <app-chat-display [messages]="messages"></app-chat-display>
+        <app-chat-input
+                (sendUserMessage)="handleUserMessage($event)"
+                (updateAiResponse)="handleAiResponse($event)">
+        </app-chat-input>
+    </div>
+</div>

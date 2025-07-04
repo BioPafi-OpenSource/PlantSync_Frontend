@@ -1,0 +1,31 @@
+.chat-display {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #e5ddd5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.user {
+    align-self: flex-end;
+}
+
+.assistant {
+    align-self: flex-start;
+}
+
+.bubble {
+    max-width: 80%;
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background-color: #dcf8c6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.assistant .bubble {
+    background-color: #ffffff;
+}
