@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AiService {
   private apiUrl = 'https://api.openai.com/v1/chat/completions';
-  private apiKey = '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';
+  private apiKey = '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';
 
   constructor(private http: HttpClient) {}
 
