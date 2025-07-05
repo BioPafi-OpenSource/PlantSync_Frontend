@@ -15,4 +15,17 @@ import {
 })
 export class ConfigurationPageComponent {
 
+  toggleDarkMode() {
+    const body = document.body;
+    const isDark = body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+  }
+
+  ngOnInit() {
+    const isDark = localStorage.getItem('darkMode') === 'true';
+    if (isDark) {
+      document.body.classList.add('dark-mode');
+    }
+  }
+
 }
