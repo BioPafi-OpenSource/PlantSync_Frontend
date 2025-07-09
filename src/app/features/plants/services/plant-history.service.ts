@@ -13,14 +13,15 @@ export class PlantHistoryService extends BaseService<PlantHistory>{
 
 
 
-  private apiUrl = `${this.serverBaseUrl}/plantHistory`;
+  private apiUrl = `${this.serverBaseUrl}/plantHistories`;
 
   constructor() {
     super();
   }
 
-
   getPlantHistoryByPlantId(plantId: number): Observable<PlantHistory[]> {
-    return this.http.get<PlantHistory[]>(`${this.apiUrl}?plantId=${plantId}&_sort=date&_order=desc`);
+    const url = `${this.apiUrl}/plantId?plantId=${plantId}`;
+    return this.http.get<PlantHistory[]>(url);
   }
+
 }

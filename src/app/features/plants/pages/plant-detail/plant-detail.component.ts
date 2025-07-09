@@ -33,9 +33,16 @@ export class PlantDetailComponent implements OnInit {
 
   onDelete(): void {
     if (confirm('¿Estás seguro de eliminar esta planta?')) {
-      this.plantService.deletePlant(this.plantId).subscribe(() => {
-        this.router.navigate(['/plants']);
+      this.plantService.deletePlant(this.plantId).subscribe({
+        next: () => {
+          this.router.navigate(['/plants']);
+        },
+        error: (err) => {
+          console.error('Error al eliminar la planta:', err);
+          alert('Hubo un problema al eliminar la planta.');
+        }
       });
+
     }
   }
 }
