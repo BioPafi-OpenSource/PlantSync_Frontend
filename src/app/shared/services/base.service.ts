@@ -59,9 +59,11 @@ export abstract class BaseService<T> {
    * @returns An Observable of the deletion result
    */
   public delete(id: any): Observable<any> {
-    return this.http.delete(`${this.resourcePath()}/${id}`, this.httpOptions)
-        .pipe( catchError(this.handleError));
+    return this.http.delete(`${this.resourcePath()}/${id}`, {
+      responseType: 'text'
+    }).pipe(catchError(this.handleError));
   }
+
 
   /**
    * Updates an existing resource
